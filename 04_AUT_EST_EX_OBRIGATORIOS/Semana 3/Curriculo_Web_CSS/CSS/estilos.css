@@ -6,7 +6,8 @@ body{
     width: 100vw;
 }
 
-ul,ol{
+ul,ol,h2{
+    margin: 0;
     list-style: none;
     
 }
@@ -68,6 +69,35 @@ footer{
     top: 1020px;
 }
 
+.efect > p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    width: 100%;
+    gap: 15px;
+}
+
+.efect > p > a{
+    position: absolute;
+    width: 262px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    top: 480px;
+    background-color: aliceblue;
+}
+
+.efect > p > a:hover{
+    position: absolute;
+    width: 262px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    top: 480px;
+    background-color: rgb(255, 166, 0);
+    color: black;
+}
 .efect{
     display: flex;
     justify-content: center;
@@ -75,7 +105,8 @@ footer{
     margin: 20px;
     background-color: aliceblue;
     height: 40px;
-    width: 110%;
+    width: 100%;
+    gap: 15px;
 }
 
 .efect:hover{
@@ -84,18 +115,24 @@ footer{
 }
 
 .moreEfec{
-    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s;
 
 }
 
 
-.moreEfec:hover{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.moreEfec:hover,.moreEfec>h2>button:hover {
     width: 511px;
     height: 60px;
     border-radius: 30px;
     background-color: blueviolet;
     color: aliceblue;
 }
+
+button{
+    background: none;
+    border: none;
+}
+

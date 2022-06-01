@@ -13,6 +13,13 @@
     <div id="contener">
         <div><input id="res" type="text" placeholder="Digite Alogo..."></input></div>
         <div>
+            <ul id="exp">
+                <li><div class="especial" onclick="operacao('+')">+</div></li>
+                <li><div class="especial" onclick="operacao('-')" >-</div></li>
+                <li><div class="especial" onclick="operacao('%')" >%</div></li>
+                <li><div class="especial" onclick="operacao('*')" >*</div></li>
+                <li><div class="especial" onclick="operacao('/')" >/</div></li>
+            </ul>
             <ul id="numeros">
                 <li onclick="numero('1')">1</li>
                 <li onclick="numero('2')">2</li>
@@ -25,13 +32,6 @@
                 <li onclick="numero('9')">9</li>
                 <li onclick="numero('0')">0</li>
                 <div id="resultado" onclick="resultado()">=</div>
-            </ul>
-            <ul id="exp">
-                <li><div class="especial" onclick="operacao('+')">+</div></li>
-                <li><div class="especial" onclick="operacao('-')" >-</div></li>
-                <li><div class="especial" onclick="operacao('%')" >%</div></li>
-                <li><div class="especial" onclick="operacao('*')" >*</div></li>
-                <li><div class="especial" onclick="operacao('/')" >/</div></li>
             </ul>
         </div>
     </div>

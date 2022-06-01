@@ -91,17 +91,18 @@ body,li{
 
 #exp{
     display: flex;
+    text-align: center;
+    gap: 12px;
+    padding: 0;
+    justify-content: center;
     
 }
 
 .especial{
     font-size: larger;
-    display: flex;
-    width: 60px;
-    height: 60px;
-    background: rgb(163, 163, 163);
-    border-bottom: 4px solid rgb(55, 55, 55);
-    border-right: 4px solid rgb(117, 117, 117);
-    align-items: center;
-    justify-content: center;
+    width: 30px;
+    height: 20px;
+    background: rgb(144, 140, 161);
+    border-bottom: 4px solid rgb(51, 51, 54);
+    border-right: 4px solid rgb(106, 104, 113);
 }

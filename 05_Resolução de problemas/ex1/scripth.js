@@ -18,25 +18,29 @@ function numero(a){
 }
 
 function resultado(){
-    if(opera == "+"){
-        res = parseInt(x)+parseInt(y)  
-    }
-    else if (opera == "-"){
+//     if(opera == "+"){
+//         res = parseInt(x)+parseInt(y)  
+//     }
+//     else if (opera == "-"){
         
-        res = parseInt(x)-parseInt(y);
-    }
-    else if (opera == "*"){
-        res = parseInt(x)*parseInt(y);
-    }
-    else if (opera == "%"){
-        res = parseInt(x)%parseInt(y);
-    }
-    else{res = x/y;
-    document.getElementById("res").value += "/";
-    res = parseInt(x)/parseInt(y);
-}
+//         res = parseInt(x)-parseInt(y);
+//     }
+//     else if (opera == "*"){
+//         res = parseInt(x)*parseInt(y);
+//     }
+//     else if (opera == "%"){
+//         res = parseInt(x)%parseInt(y);
+//     }
+//     else{res = x/y;
+//     document.getElementById("res").value += "/";
+//     res = parseInt(x)/parseInt(y);
+// }
+// document.getElementById("res").value = res;
+// v = false;
+res = eval(document.getElementById("res").value)
 document.getElementById("res").value = res;
-v = false;
+
+
 }
 
 function operacao(a){

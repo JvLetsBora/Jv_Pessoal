@@ -1,0 +1,39 @@
+<html lang="Pt-br">
+    <!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <script src="scripth.js"></script>
+
+    <title>Calculadora</title>
+</head>
+<body>
+    <div id="contener">
+        <div><input id="res" type="text" placeholder="Digite Alogo..."></input></div>
+        <div>
+            <ul id="exp">
+                <li><div class="especial" onclick="operacao('+')">+</div></li>
+                <li><div class="especial" onclick="operacao('-')" >-</div></li>
+                <li><div class="especial" onclick="operacao('%')" >%</div></li>
+                <li><div class="especial" onclick="operacao('*')" >*</div></li>
+                <li><div class="especial" onclick="operacao('/')" >/</div></li>
+            </ul>
+            <ul id="numeros">
+                <li onclick="numero('1')">1</li>
+                <li onclick="numero('2')">2</li>
+                <li onclick="numero('3')">3</li>
+                <li onclick="numero('4')">4</li>
+                <li onclick="numero('5')">5</li>
+                <li onclick="numero('6')">6</li>
+                <li onclick="numero('7')">7</li>
+                <li onclick="numero('8')">8</li>
+                <li onclick="numero('9')">9</li>
+                <li onclick="numero('0')">0</li>
+                <div id="resultado" onclick="resultado()">=</div>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

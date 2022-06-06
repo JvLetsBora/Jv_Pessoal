@@ -1,0 +1,13 @@
+#btn{
+    display: flex;
+    width: 110;
+    height: 20;
+    background-color: rgb(255, 255, 255);
+    transition: 1s;
+}
+
+#btn:hover{
+    width: 55px;
+    height: 2px;
+    background-color: tomato;
+}

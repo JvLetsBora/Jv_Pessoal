@@ -1,15 +1,23 @@
 var p = parseInt(document.getElementById("inP").value)
-var v = parseInt(document.getElementById("inV").value)
+
 
 
 function pMais(){
-    p = parseInt(document.getElementById("inP").value)
-    document.getElementById("inP").value = p + 1
+    p = parseInt(document.getElementById("inP").value) + 1
+    document.getElementById("inP").value = p 
     console.log(p)
+    atualizar()
 }
 
 function vMais(){
-    v = parseInt(document.getElementById("inV").value)
-    document.getElementById("inV").value = v + 1
-    console.log(v)
+    p = parseInt(document.getElementById("inP").value) - 1
+    document.getElementById("inP").value = p
+    console.log(p)
+    atualizar()
+}
+
+function atualizar(){
+    var v = document.getElementById("inV").value
+    var res = document.getElementById("res")
+    res.innerHTML = "Ficou: "+eval("p * v")
 }

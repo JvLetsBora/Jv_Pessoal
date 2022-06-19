@@ -18,7 +18,7 @@ function media(){
         var a = alunos.get(teste)[0] = document.getElementById(test2).value
         var b = alunos.get(teste)[1] = document.getElementById(test3).value
         var media = (parseInt(a) + parseInt(b))/2
-        document.getElementById("m3").innerHTML += "<div>"+"Media do aluno"+i+": "+media+"</div>"
+        document.getElementById("m3").innerHTML += "<div class=\"media\">"+"Media do aluno"+i+": "+media+"</div>"
     }
     
 }

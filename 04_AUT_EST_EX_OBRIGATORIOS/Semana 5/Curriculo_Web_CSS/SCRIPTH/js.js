@@ -8,13 +8,13 @@ function clicou(){
  // Requisição por Ajax
  function atualizarItens(){
      //Objeto request
-     let request = new XMLHttpRequest(); 
+     let request = new XMLHttpRequest(); // 
      //Criar a função do pedido
      request.onload = function(){
          let MyJson = JSON.parse(this.responseText)// [{Key:value},{Key:value},{Key:value}]
          let MyJsonSize = MyJson.length
          for(let i = 0; i < MyJsonSize; i++ ){ // <div class="conteudo" MyJson[i].id> <div> MyJson[i].id </div> <div> Nome: MyJson[i].name </div> <div> Numero MyJson[i].date </div> <a href="#" class="btndelete" > Remover </a></div>
-             document.getElementById("Meu-TR").innerHTML += "<div class=\"conteudo\"" + MyJson[i].id +"> <div>"+ MyJson[i].id+" </div> <div> Nome: "+MyJson[i].name +"</div> <div> Numero: "+ MyJson[i].date +"</div> <a href=\"#\" class=\"btndelete\" > Remover </a></div>"
+             document.getElementById("Meu-TR").innerHTML += "<div class=\"conteudo\"" + MyJson[i].id +"> <div>"+ MyJson[i].id+" </div> <div> Nome: "+MyJson[i].name +"</div> <div> Numero: "+ MyJson[i].date +"</div> <div class=\"btndelete\" onclick=\"deletar("+MyJson[i].id+")\" > Remover <div></div>"
          }
          console.log(JSON.parse(this.responseText))
      }
@@ -45,15 +45,14 @@ function enviaAcesso(){
 }
 
 // Delete por ajax
-$(document).ready(function(){
-    $('body').on('click', '.btndelete', function (e) {
-        idTable = $(this).closest('tr').attr('id')
-      $.ajax({
-        url: "/deletaracesso",
-        data: { id: idTable},
-        type: "Delete",
-        dataType: "Json",
-      });
-      $("#"+idTable).remove();
-    });
+function deletar(id){
+    alert("Clicou Salve "+id)
+    var a = id
+  $.ajax({
+    url: "/deletaracesso",
+    data: { id: a},
+    type: "Delete",
+    dataType: "Json",
   });
+  $("div"+a).remove();
+}

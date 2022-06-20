@@ -1,15 +1,23 @@
 
-function troca(){
-    var pessoas = parseInt(document.getElementById("m1").value)
-    var escolha = document.getElementById("escolha").value
-    var preco = 0
-    if(pessoas > 50 && escolha == "diurno"){
-        preco = (pessoas*(200*0.4))
-    }else if(escolha == "diurno"){
-        preco = pessoas*200
-    }else if(pessoas > 50 && escolha == "noturno"){
-        preco = (pessoas*(100*0.2))
-    }else{preco = pessoas*100 }
-    document.getElementById("m2").innerHTML = "O preço total deu: "+preco
-}
-
+function fibo(){
+    var term = parseInt(document.getElementById('m1').value);
+    var re = document.getElementById('m2');
+    var pen=0, ult=1, a;
+    var nume='';
+  
+    for(var coun=1 ; coun<=term ; coun++){
+     if(coun<=2){
+      nume += 'Termo '+coun+': ' + (coun-1) + '<br />'
+  
+     }
+     else{
+      nume += 'Termo '+coun+': ' + (ult+pen) + '<br />'
+  
+      a = ult;
+      ult = ult + pen;
+      pen = a;
+     }
+    }
+  
+    re.innerHTML=nume;
+  }

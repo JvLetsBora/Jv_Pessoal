@@ -1,10 +1,10 @@
 function troca(){
-    let m1 = document.getElementById("m1").value // e
-    let m2 = document.getElementById("m2").value // b
-    var save // NaH
-    save = m1 // e
-    m1 = m2 // b
-    m2 = save // e
-    document.getElementById("m1").value = m1
-    document.getElementById("m2").value = m2
+    let m1 = document.getElementById("m1").value // 123
+    m1.split()
+    let tamanho = m1.length
+    var valor = 0
+    for (let i = 0; i < tamanho; i++) {
+        valor = valor + Number(m1[i])
+    }
+    document.getElementById("res").innerHTML = "A soma desses termos é "+valor
 }

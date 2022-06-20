@@ -11,14 +11,10 @@
     <script src="./codigo.js">
 
     </script>
-    <h1>Preço/Produto</h1>
-    <p>Crie uma página web na qual o usuário possa informar a quantidade de um produto em um valor inteiro e, <br>por meio de dois botões, um que adiciona uma unidade e um que subtraia uma unidade, <br>o valor do campo da quantidade possa ser manipulado.</p>
-    <input name="nome" type="text" id="inP" placeholder="quantidade">
-    <input name="nome" type="text" id="inV" placeholder="valor">
+    <h1>Impar?</h1>
+    <p>Crie uma página web na qual o usuário informe um número inteiro de três dígitos e quando o usuário indicar que deseja que o cálculo seja<br> realizado (pressionar um botão), seja exibido se o dígito da centena é par ou ímpar.</p>
+    <input name="nome" type="number" id="btn" max="999" min="100" placeholder="Digite um numero">
     <div id="res">Resultado</div>
-    <div id="btn">
-        <button id="btnP" onclick="pMais()">Adicionar +</button>
-        <button id="btnV" onclick="vMais()">Tirar -</button>
-    </div>
+     <button onclick="calcular()">Calcular</button>
 </body>
 </html>

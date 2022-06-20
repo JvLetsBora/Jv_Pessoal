@@ -174,10 +174,38 @@ button{
 .conteudo{
     display: flex;
     align-items: center;
-    justify-content: center;
-    min-width: 200px;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 200px;
     height: 30%;
     margin: 20px;
     background-color: rgb(87, 74, 74);
 
+}
+
+.logo{
+    max-width: 64px;
+    max-height: 64px;
+    position: relative;
+    right: 76.5px;
+    display: flex;
+   justify-content: center;
+}
+
+.btndelete{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 200px;
+    color: rgb(235, 213, 213);
+    background-color: rgb(42, 32, 14);
+    
+}
+
+.btndelete:hover{
+    color: rgb(255, 187, 187);
+    background-color: rgb(92, 72, 35);
 }

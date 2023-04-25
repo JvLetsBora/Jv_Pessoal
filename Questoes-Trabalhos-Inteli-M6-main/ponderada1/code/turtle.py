@@ -10,10 +10,15 @@ class TurtleController(Node):
         self.publisher_ = self.create_publisher(Twist, 'turtle1/cmd_vel', 10)
         self.timer_ = self.create_timer(0.1, self.move_turtle)
         self.twist_msg_ = Twist()
+        self.x = 0
 
     def move_turtle(self):
-        self.twist_msg_.linear.x = 1.0
-        self.twist_msg_.angular.z = 0.5
+        if self.x < 2:
+            self.x += 0.05
+        else:
+            self.x -= 3.0
+        self.twist_msg_.linear.x = 1.0 + self.x
+        self.twist_msg_.angular.z = self.x
         self.publisher_.publish(self.twist_msg_)
 
 
@@ -23,6 +28,7 @@ def main(args=None):
     rclpy.spin(turtle_controller)
     turtle_controller.destroy_node()
     rclpy.shutdown()
+    
 
 
 if __name__ == '__main__':

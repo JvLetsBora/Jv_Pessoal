@@ -1,5 +1,5 @@
 <img src="../assets/logo-inteli.png" alt="Logo do Inteli"/>
-[https://github.com/JvLetsBora/Jv_Pessoal/tree/AVG_Modulo_novo/Questoes-Trabalhos-Inteli-M6-main/ponderada1](https://drive.google.com/file/d/1OiihrjWdBNIjfUe8oQSwVV_JvL9dILoq/view?usp=share_link)
+(https://drive.google.com/file/d/1OiihrjWdBNIjfUe8oQSwVV_JvL9dILoq/view?usp=share_link)
 # Atividade 1: Turtlesim: simulando um ambiente robótico integrado no ROS
 
 ## Enunciado

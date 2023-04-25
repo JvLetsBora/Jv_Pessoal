@@ -2,6 +2,16 @@
 
 # Atividade 1: Turtlesim: simulando um ambiente robótico integrado no ROS
 
+**Conteúdo**
+
+- [Estrutura de pastas](#Estrutura-de-pastas)
+- [Funcionamento](#Funcionamento)
+- [Descrição do código](#Descrição-do-código)
+  - [Criando um nó](#Criando-um-nó)
+  - [Inicialização](#Inicialização)
+- [Referências](#Referências)
+
+
 ## Estrutura de pastas:
 .
 └── code
@@ -10,10 +20,11 @@
 
 1 directory, 2 files
 ```
-
 O arquivo `turtle.py` é um script utilizando OOP para interagir com o nó de simulação do turtlesim. Já o requirements.txt é o resultado de um comando `pip freeze` dentro de um venv utilizado para criar esse exemplo. Isso significa que ele tem todos os pacotes necessários para rodar o script. Vamos garantir que está tudo instalado com: 
+```
 
-```bash
+```
+bash
 pip install -r requirements.txt
 ```
 

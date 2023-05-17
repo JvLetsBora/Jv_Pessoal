@@ -7,6 +7,7 @@
 </table>
 <font  size="20"><center>
 Concepção de integração de aplicações
+ 
 </center></font>
 # **Sumário**
 - [Autores](#autores)
@@ -16,11 +17,16 @@ Concepção de integração de aplicações
 - [Desenvolvimento](#desenvolvimento)
 - [Conclusão](#conclusão)
 - [Referências](#referências)
+
+
 # Autores
 Kil Matheus Gomes Teixeira
+
+
 # Visão Geral do Projeto
 ## Proposta
 A fim de proporcionar aprendizado prático aos alunos do 2º ano do curso de Engenharia da Computação, o Instituto de Liderança e Tecnologia - INTELI, juntamente com o professor de programação Rodrigo Mangoni Nicola, propôs uma atividade desafiadora que busca aplicar os conhecimentos adquiridos sobre ambiente ROS2 (Ambiente de Programação de Desenvolvimento de Sistemas Robóticos) e Ubuntu.
+
 # Objetivos
 O exercício chamado de 'Turtlesim: simulando um ambiente robótico integrado no ROS', tem como objetivo principal conseguir executar os todos  ambientes de desenvolvimento, na qual o rastro da tartaruga faça um desenho.
 ## Requisitos
@@ -33,12 +39,6 @@ c) Explicação coerente e concisa da implementação; (peso 3)
 d) Congruência entre o que foi escrito e o código disposto no repositório do github; (peso 2)
 ## Instalação de Ambiente
 A instalação do ambiente é necessária pois a nossa simulação será feita no ambiente Linux e não em um ambiente Windows nativo. Todos os programas e apps necessários estão listados abaixo. Seguindo todos os tutoriais me maneira correta, pode-se considerar que o ambiente para o desenvolvimento está concluido.
-### WSL
-É uma aplicação do sistema operacional Windows que permite a instalação e execução de distribuições Linux sem a necessidade de utilizar uma máquina virtual ou reinicializar o computador.
-Permite que os usuários do Windows possam acessar o vasto ecossistema de ferramentas e aplicativos disponíveis
-A instalação do WSL pode ser feita seguindo os passos no link abaixo:
-https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#2-install-wsl
-*Nota: A instalação do Ubuntu precisa ser necessariamente da versão 22.04.2 LTS por motivos de compatibilidade do sistema.
 ### Ubuntu 22.04.2 LTS
 O aplicativo Ubuntu no Windows é uma implementação do Windows Subsystem for Linux (WSL), que permite a instalação e execução do Ubuntu no sistema operacional Windows.
 O Download do Ubuntu 22.02.2 LTS pode ser feita pela Microsoft Store pelo link:

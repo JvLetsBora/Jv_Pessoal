@@ -11,7 +11,7 @@
 - [Autor](#autor)
 - [Visão Geral do Projeto](#visão-geral-do-projeto)
 - [Desenvolvimento](#desenvolvimento)
-- [Referências](#referências)
+
 
 
 # Autor
@@ -61,7 +61,4 @@ Todas essas operações só são possíveis por meio das importações das bibli
 <img src="image/ray-so-export%20(2).png"></img>
 </p>
 
-## Referências
-TEIXEIRA. Kil Matheus Gomes. Robô Digital. Repositório Github. Disponível em: [https://github.com/Kil-Matheus/Turtlesim---Desenhando-com-Caminho](https://github.com/Kil-Matheus/Turtlesim---Desenhando-com-Caminho.git). Acesso em: 24 abr. 2023.
-NICOLA,  Rodrigo Mangoni (2023). Encontro 01 - Introdução à robótica móvel.pdf . Instituto de Tecnologia e Liderança - INTELI. Disponível em: https://drive.google.com/file/d/1-dI8THMPGiNdi27UYRsY-Nfjb7Ax25D-/view?usp=sharing. Acesso em: 24 abril 2023.
 

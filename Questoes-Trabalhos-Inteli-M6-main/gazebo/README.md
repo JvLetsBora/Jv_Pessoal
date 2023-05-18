@@ -91,6 +91,4 @@ Podemos concluir que essa atividade que o objetivo de nos mostrar de maneira sim
 ## Referências
 TEIXEIRA. Kil Matheus Gomes. Robô Digital. Repositório Github. Disponível em: [https://github.com/Kil-Matheus/Turtlesim---Desenhando-com-Caminho](https://github.com/Kil-Matheus/Turtlesim---Desenhando-com-Caminho.git). Acesso em: 24 abr. 2023.
 NICOLA,  Rodrigo Mangoni (2023). Encontro 01 - Introdução à robótica móvel.pdf . Instituto de Tecnologia e Liderança - INTELI. Disponível em: https://drive.google.com/file/d/1-dI8THMPGiNdi27UYRsY-Nfjb7Ax25D-/view?usp=sharing. Acesso em: 24 abril 2023.
-# Agradecimentos
-Agradecimentos especiais a:
- Rodrigo Mangoni Nicola pelo seu grande conhecimento em programação que sempre nos ajuda em todos os desenvolvimentos.
+

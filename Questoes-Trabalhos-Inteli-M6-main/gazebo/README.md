@@ -5,10 +5,7 @@
 </td>
 </tr>
 </table>
-<font  size="20"><center>
-Concepção de integração de aplicações
- 
-</center></font>
+
 
 # Sumário
 - [Autores](#autores)

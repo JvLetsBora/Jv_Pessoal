@@ -10,46 +10,31 @@
 # Sumário
 - [Autores](#autores)
 - [Visão Geral do Projeto](#visão-geral-do-projeto)
-- [Objetivos](#objetivos)
-- [Instalação de Ambiente](#instalação-de-ambiente)
 - [Desenvolvimento](#desenvolvimento)
 - [Conclusão](#conclusão)
 - [Referências](#referências)
 
 
-# Autores
-Kil Matheus Gomes Teixeira
-
+# Autor
+João Vitor Oliveira Rodrigues
 
 # Visão Geral do Projeto
 ## Proposta
-A fim de proporcionar aprendizado prático aos alunos do 2º ano do curso de Engenharia da Computação, o Instituto de Liderança e Tecnologia - INTELI, juntamente com o professor de programação Rodrigo Mangoni Nicola, propôs uma atividade desafiadora que busca aplicar os conhecimentos adquiridos sobre ambiente ROS2 (Ambiente de Programação de Desenvolvimento de Sistemas Robóticos) e Ubuntu.
+O projeto proposto pelo Instituto de Liderança e Tecnologia - INTELI, em colaboração com o professor de programação Rodrigo Mangoni Nicola, busca proporcionar aprendizado prático aos alunos do 2º ano do curso de Engenharia da Computação. O objetivo é criar um algoritmo de rotas que possa interagir com a simulação Gazebo utilizando os princípios de nós do ROS (Robot Operating System), aplicando os conhecimentos adquiridos sobre o ambiente ROS2 e o sistema operacional Ubuntu.
 
-# Objetivos
-O exercício chamado de 'Turtlesim: simulando um ambiente robótico integrado no ROS', tem como objetivo principal conseguir executar os todos  ambientes de desenvolvimento, na qual o rastro da tartaruga faça um desenho.
 ## Requisitos
-Segundo o card do AdaLove do prof. Rodrigo Mangoni Nicola, os requisitos são descricos como seguintes:
+O enunciado dessa atividade contempla os seguintes requisitos:
+
+Para esta atividade, espera-se a capacidade demonstrável de interagir com um ambiente de simulação de robôs, gerando um movimento controlado na plataforma turtlebot3. A entrega deve ser um vídeo demonstrando o funcionamento do projeto, um texto conciso descrevendo como foi feita a implementação e o link para o repositório público no github onde foi feita a implementação.
+
 Padrão de qualidade:
-Ao teerminar está atividade, espera-se que os estudantes consigam validar suas instalações locais do ambiente de desenvolvimento que será utilizado ao longo do semestre. Com sua finalização, os estudantes deverão adicionar um link para um vídeo não listado no Youtube com a simulação funcionando.
-a) Configuração adequada do ambiente de desenvolvimento ROS; (peso 2)
-b) Funcionamento correto do script de interação com o turtlesim; (peso 3)
-c) Explicação coerente e concisa da implementação; (peso 3)
-d) Congruência entre o que foi escrito e o código disposto no repositório do github; (peso 2)
-## Instalação de Ambiente
-A instalação do ambiente é necessária pois a nossa simulação será feita no ambiente Linux e não em um ambiente Windows nativo. Todos os programas e apps necessários estão listados abaixo. Seguindo todos os tutoriais me maneira correta, pode-se considerar que o ambiente para o desenvolvimento está concluido.
-### Ubuntu 22.04.2 LTS
-O aplicativo Ubuntu no Windows é uma implementação do Windows Subsystem for Linux (WSL), que permite a instalação e execução do Ubuntu no sistema operacional Windows.
-O Download do Ubuntu 22.02.2 LTS pode ser feita pela Microsoft Store pelo link:
-https://www.microsoft.com/store/productId/9PN20MSR04DW
-O tutorial de instalação pode ser feita pelo link abaixo:
-https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#2-install-wsl
-*Nota: O tutorial mostra uma outra versão do aplicativo Ubuntu, mas idependente da versão, a instalação segue os mesmos passos. Vale ressaltar que a versão indicada é possui uma maior compatibilidade para o projeto. Durante ainda a instalação do sistema, é necessário cirar um perfil com nome e senha para que a palicação funcione sem mais complicações.
-### ROS2
-É uma aplicação para o desenvolviemento de código aberto para construir sistemas robóticos avançados. Ele consegue integrar uma variedade de componentes de hardware e software de forma simplificada.
-Após a instalação completa do Ubuntu, abra o aplicativo do 'Terminal' e selecione o 'Ubuntu 22.02.2 LTS'
-O tutorial para a instalação do ROS2 segue no link abaixo:
-https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html
-*Nota: No Terminal já configurado, copie e cole os comandos como está no tutorial e espere até toda a instalação seja concluida. Os tópicos a serem instalados são 'Set locale', 'Setup Souces' e 'Install ROS2 packages'. Para testar se a instalação foi feita corretamente, sempre rode o codigo que está em 'Environment Setup' e depois os de 'Try some examples'.
+
+1. Setup adequado do ambiente de simulação; (peso 1)
+2. Interação adequada com os tópicos relacionados ao robô simulado; (peso 2)
+3. Demonstração de movimento controlado de acordo com uma rota pré-estabelecida; (peso 3)
+4. Explicação coerente e concisa da implementação (min 250 caracteres e máximo 1500); (peso 2)
+5. Congruência entre o que foi escrito e o código disposto no repositório do github; (peso 2)
+
 ## Desenvolvimento
 Para iniciarmos a nossa aplicação, precisamos abri o app 'Terminal' do Windows, e selecionarmos o ambiente do Ubuntu.
 <center>
@@ -68,6 +53,7 @@ Para rodar o Turtlesim no ambiente Ubuntu:
 Com isso podemos ver a simulação abrir e rodar.
 <center>
 <img  src="img\turtle.png"  alt="Simulação"  />
+ 
 </center>
 **<font  size=2> Figura 3 — Simulação Turtlesim, Autoria Própria </font>**
 Para fazer a tartaruga se move, ela funciona por meio de requisições do Turtlesim, em suma, são mensagens ROS envidas para um nó específico que contem informações sobre velocidade, posição e orientação. Ela lê essa requisição e retorna a posição corrigida. A linguagem de programação utilizada foi Python como o nome do arquivo 'test.py'.
@@ -98,7 +84,8 @@ A figura a seguir mostra o resultado final:
 </center>
 **<font  size=2> Figura 7 — Resultado final gráfico do caminho da tartaruga, Autoria Própria</font>**
 Logo abaixo segue o link para conferir o funcionamento da atividade.
-https://drive.google.com/file/d/1mlPCqhb1jqlHhZ1le4YVIU_54lTdiejy/view?usp=sharing
+https://drive.google.com/drive/folders/1kOvolLzQ_O7Zr_vZ-mhC6-eI0zbxfNca
+
 ## Conclusão
 Podemos concluir que essa atividade que o objetivo de nos mostrar de maneira simulado, como seria uma programação para a movimentação de um Robô. Em uma simulação, pode trazer o conceito de aprendizagem, mas no mundo real, pode trazer grandes benefícios como por exemplo, acessar áreas de risco ou até mesmo ajuda um grande almoxerifado a locomover grande objetos de maneira eficiente.
 ## Referências

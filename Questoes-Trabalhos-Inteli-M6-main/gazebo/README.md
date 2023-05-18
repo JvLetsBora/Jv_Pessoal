@@ -49,13 +49,16 @@ Padrão de qualidade:
 <br>
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A função listener_callback recebe os valores do odômetro e os armazenam na variavel self.x.
-A função publisher_callback realiza a subtração entre a posição do robô e o ponto destino. Além disso, ela avança para o próximo ponto da lista quando o ponto atual é alcançado. Todas essas funções são chamadas e executadas no main.
+A função publisher_callback realiza a subtração entre a posição do robô e o ponto destino. Além disso, ela avança para o próximo ponto da lista quando o ponto atual é alcançado. Todas essas funções são chamadas e executadas pala classe TurtleController que herda da classe Node e é execultada e instânciada na função main.
 <br>
 <br>
-<img src="../media/c%C3%B3digo_prints/funcoes.png"></img>
+<img src="image/main.png"></img>
 <br>
 <br>
-
+Todas essas operações só são possíveis por meio das importações das bibliotecas rclpy, responsável pela comunicação com o sistema de nós do ROS, e geometry_msgs.msg e nav_msgs.msg para acessar os modelos de comunicação Twist, Point e Odometry. Esses modelos são responsáveis pela formatação dos dados recebidos e enviados pela simulação.
+<br>
+<br>
+<img src="image/ray-so-export%20(2).png"></img>
 </p>
 
 ## Referências

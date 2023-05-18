@@ -3,7 +3,6 @@ from rclpy.node import Node
 from geometry_msgs.msg import Twist,Point
 from nav_msgs.msg import Odometry
 from tf_transformations import euler_from_quaternion
-
 MAX_DIFF = 0.2
 goals = [1.0, 6.0, 3.0,8.0]
 class TurtleController(Node):
@@ -29,7 +28,6 @@ class TurtleController(Node):
             self.y = msg.pose.pose.position.y
             rot = msg.pose.pose.orientation
             _,_,self.theta = euler_from_quaternion([rot.x,rot.y,rot.z,rot.w])
-
     def publisher_callback(self):
         goal = Point()
         speed = Twist()

@@ -9,7 +9,8 @@
 Concepção de integração de aplicações
  
 </center></font>
-# **Sumário**
+
+# Sumário
 - [Autores](#autores)
 - [Visão Geral do Projeto](#visão-geral-do-projeto)
 - [Objetivos](#objetivos)

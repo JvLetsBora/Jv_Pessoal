@@ -11,6 +11,7 @@
 Ultralytics: Essa biblioteca é instalada usando o comando !pip install ultralytics. Ela fornece suporte ao framework YOLO e será utilizada posteriormente no treinamento do modelo.
 Roboflow: A biblioteca Roboflow é instalada com o comando !pip install roboflow. Ela é utilizada para trabalhar com conjuntos de dados de visão computacional.
 Utilização do YOLO
+  <br>
 O código utiliza o comando !yolo help para exibir informações de ajuda sobre o YOLO. Isso permite ao usuário obter detalhes sobre os comandos e opções disponíveis para uso.
 </p>
 ##Configuração do Roboflow

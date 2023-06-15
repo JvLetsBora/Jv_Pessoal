@@ -16,21 +16,22 @@
     <script>
       
       function envia() {
-          var file = document.querySelector('input[type=file]').files[0];
+          var file = document.getElementById("img_sand").files[0];
           console.log(file)
-          var url = 'https://api.example.com/upload'; // substitua com a URL da API real
+          var url = 'http://localhost:8000/images/add_a'; // substitua com a URL da API real
+          const formData = new FormData();
+          formData.append("file", file);
+
           fetch(url, {
-              method: 'POST',
-              body: file
+              method: "POST",
+              body: formData
           })
           .then(response => response.json())
           .then(data => {
-              var imageUrl = data.imageUrl; // supondo que a API retorna um objeto com a propriedade 'imageUrl'
-              console.log('URL da imagem:', imageUrl);
-              // Faça o que desejar com o URL da imagem obtido aqui
+            console.log(data)
           })
           .catch(error => {
-              console.error('Erro ao obter URL da imagem:', error);
+              console.error("Error:", error);
           });
               
             }

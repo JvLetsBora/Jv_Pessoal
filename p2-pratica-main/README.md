@@ -1,6 +1,8 @@
-# Parte prática da prova 2 do módulo 6 de Engenharia de Computação
+# Documentação do que foi feito
 
-## Enunciado
+## p
+
+## Leitura de video
 
 Desenvolva um código em Python capaz de utilizar o openCV para a leitura de um vídeo (frame a frame) e, para cada frame, o seu código deve identificar e marcar na imagem os retângulos correspondentes a cada uma das faces encontradas. Ao final do código, um novo vídeo deve ser salvo com a(s) face(s) identificada(s).
 

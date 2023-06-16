@@ -14,21 +14,22 @@
       }
     </style>
     <script>
-      
       function envia() {
           var file = document.getElementById("img_sand").files[0];
+          
           console.log(file)
           var url = 'http://localhost:8000/images/add_a'; // substitua com a URL da API real
           const formData = new FormData();
           formData.append("file", file);
-
+          
           fetch(url, {
               method: "POST",
               body: formData
           })
           .then(response => response.json())
           .then(data => {
-            console.log(data)
+            var div = document.getElementById("img_load")
+            div.innerHTML += `<img src="${data.url}" alt="Imagem selecionada">`
           })
           .catch(error => {
               console.error("Error:", error);

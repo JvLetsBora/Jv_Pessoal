@@ -6,15 +6,15 @@ from supabase import create_client, Client
 from fastapi import  File, UploadFile
 from pydantic import BaseModel
 import shutil
-import os
 from datetime import datetime
+
 
 class Image(BaseModel):
     name: str
     url: str
 
-url = "https://xwotfvgmtbaarrqamwcn.supabase.co"
-key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh3b3RmdmdtdGJhYXJycWFtd2NuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODU3MzAwNDEsImV4cCI6MjAwMTMwNjA0MX0.JS4W8RMdj_jRCpByhyFj8tA80TrW1Ti_n1vslJnDc1A"
+url = "https://xmeanomwqyzpxrhmybkn.supabase.co"
+key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhtZWFub213cXl6cHhyaG15YmtuIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4Njg0NDYwMywiZXhwIjoyMDAyNDIwNjAzfQ.2C0LDwgWOKpH4wN6rWlLe3hJHdeGI_rCCPMa99pWpOI"
 image_router = APIRouter(prefix="/images")
 bucket_name = "imagens"
 
@@ -48,11 +48,19 @@ async def get_all(file):
 async def upload_image(file: UploadFile = File(...)):
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
     file_name = f"{timestamp}_{file.filename}"
-    with open(f"static/{file_name}", "wb") as buffer:
-        shutil.copyfileobj(file.file, buffer)
-        supabase.storage.from_(bucket_name).upload(f"{file_name}", file)
+    #wb ->
+    with open(f"static/{file_name}", "wb") as w:
+        shutil.copyfileobj(file.file, w)
+        with open(f"static/{file_name}", "+rb") as r:
+            # Convert ROS Image message to OpenCV image
+            
+            # Display image
+            
+            my_string = r.read()
+            supabase.storage.from_(bucket_name).upload(f"{file_name}", my_string)
 
-    image_url = f"{url}/{file_name}"
+    image_url = f"{url}/storage/v1/object/public/imagens/{file_name}"
     image = Image(name=file.filename, url=image_url)
 
     return image
+

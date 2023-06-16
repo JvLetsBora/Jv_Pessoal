@@ -1,13 +1,18 @@
 #route_homepage.py
 
-from fastapi import APIRouter
+import cv2
 from fastapi import APIRouter
 from supabase import create_client, Client
 from fastapi import  File, UploadFile
 from pydantic import BaseModel
 import shutil
 from datetime import datetime
+import numpy as np
 
+
+teste = [[2.0, 0.0, -1.0],
+        [0.0, 1.0, 0.0],
+        [2.0, 0.0, -2.0]]
 
 class Image(BaseModel):
     name: str
@@ -51,6 +56,12 @@ async def upload_image(file: UploadFile = File(...)):
     #wb ->
     with open(f"static/{file_name}", "wb") as w:
         shutil.copyfileobj(file.file, w)
+        image = cv2.imread(f"static/{file_name}")
+        gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        kernel = np.array(teste, dtype=np.float32)
+        filtered_IMAGE = cv2.filter2D(gray_image, -1, kernel)
+        cv2.imwrite(f"{file_name}", filtered_IMAGE)
+
         with open(f"static/{file_name}", "+rb") as r:
             # Convert ROS Image message to OpenCV image
             

@@ -26,6 +26,7 @@ Rota /add_a: Rota assíncrona que recebe o upload de uma imagem, processa-a e a 
 Arquivo route_homepage.py (continuação)
 general_pages_router: Roteador do FastAPI para as páginas gerais da aplicação.
 Rota /: Rota que renderiza o template HTML da página inicial.
+<br>
 Frontend
 Arquivo templates/homepage.html
 O arquivo templates/homepage.html é um template HTML usado para renderizar a página inicial da aplicação.

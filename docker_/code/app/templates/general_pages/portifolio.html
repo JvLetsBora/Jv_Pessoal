@@ -1,0 +1,692 @@
+{% extends "shared/base.html" %}
+
+
+{% block title %} 
+<title>Curriculo</title>
+  <style>
+    img{
+    max-width: 400px;
+    width: 5%;
+    border-radius: 100%;
+    margin: 10px;
+    }
+    #main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: fit-content;
+    }
+    .card{
+    display: flex;
+    padding: 25px;
+    background-color: aliceblue;
+    border-radius: 15px;
+    width: 96vw;
+    min-height: 20%;
+    margin: 10px;
+    }
+    .pvs-list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    }
+    </style>
+{% endblock %} 
+
+{% block content %} 
+<div id="main">
+  <img src="static/euPerfil.png" alt="">
+  <h3>João Vitor Oliveira Rodrigues</h3>
+  <div class="card">
+  <p>
+  <b>Descrição</b>
+  <br> Sendo proativo comecei a estudar efeitos visuais aos 13 anos na escola SAGA, onde encontrei minha vocação, criar conceitos e materializar ideias é o que me inspira. Esse curso teve a duração de 27 meses e em um dos seus módulos fui introduzido a criação de jogos, onde a liberdade da programação me encantou, com determinação tracei que teria uma boa formação na área Engenharia da Computação e hoje estudo na faculdade do futuro INTELI.
+  </p>
+  </div>
+  <div class="card">
+  <p>
+  <h4>Experiência</h4>
+  <br>
+  </p>
+  <div class="pvs-list__outer-container">
+  <div class="pvs-list">
+  <li class="artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column">
+  <!----> <div class="pvs-entity
+  pvs-entity--padded pvs-list__item--no-padding-in-columns
+  ">
+  <div>
+  <a data-field="experience_company_logo" class="optional-action-target-wrapper
+  display-flex" target="_self" href="https://www.linkedin.com/company/25009299/">
+  <div class="ivm-image-view-model pvs-entity__image ">
+  <div class="ivm-view-attr__img-wrapper ivm-view-attr__img-wrapper--use-img-tag display-flex
+  ">
+  <!----> <img src="https://media.licdn.com/dms/image/D4D0BAQEiwRtmUQUM6Q/company-logo_100_100/0/1688564050168?e=1700092800&amp;v=beta&amp;t=eufVOih303yeIReYnbO3FbC-V05Hoq9sgxti_Q6-foQ" loading="lazy" alt="Logo da empresa Cia de Talentos" id="ember12025" class="ivm-view-attr__img--centered EntityPhoto-square-3 evi-image lazy-image ember-view">
+  </div>
+  </div>
+  </a>
+  </div>
+  <div class="display-flex flex-column full-width align-self-center">
+  <div class="display-flex flex-row justify-space-between">
+  <div class="
+  display-flex flex-column full-width">
+  <div class="display-flex flex-wrap align-items-center full-height">
+  <div class="display-flex ">
+  <div class="
+  display-flex full-width">
+  <div class="display-flex align-items-center
+  mr1 t-bold">
+  <span aria-hidden="true"><!----><b>Estagiário de tecnologia</b><!----></span><span class="visually-hidden"><!----><b>Estagiário de tecnologia</b><!----></span>
+  </div>
+  </div>
+  </div>
+  <!----><!----><!----> </div>
+  <span class="t-14 t-normal">
+  <span aria-hidden="true"><!---->Cia de Talentos · Estágio<!----></span><span class="visually-hidden"><!---->Cia de Talentos · Estágio<!----></span>
+  </span>
+  <span class="t-14 t-normal t-black--light">
+  <span aria-hidden="true"><!---->jan de 2023 · 1 mês<!----></span><span class="visually-hidden"><!---->jan de 2023 · 1 mês<!----></span>
+  </span>
+  <span class="t-14 t-normal t-black--light">
+  <span aria-hidden="true"><!---->São Paulo, Brasil · Remota<!----></span><span class="visually-hidden"><!---->São Paulo, Brasil · Remota<!----></span>
+  </span>
+  </div>
+  <!---->
+  <div class="pvs-entity__action-container">
+  <!----> </div>
+  </div>
+  <div class="pvs-list__outer-container">
+  <!----> <ul class="pvs-list
+  ">
+  <li class=" pvs-list__item--one-column">
+  <div class="pvs-list__outer-container">
+  <!----> <ul class="pvs-list
+  ">
+  <li class="pvs-list__item--with-top-padding pvs-list__item--one-column">
+  <div class="display-flex ">
+  <div class="
+  display-flex full-width">
+  <div class="pv-shared-text-with-see-more full-width t-14 t-normal t-black display-flex align-items-center">
+  <div class="inline-show-more-text
+  inline-show-more-text--is-collapsed
+  inline-show-more-text--is-collapsed-with-line-clamp
+  full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+  <span aria-hidden="true"><!---->Durante o meu estágio tive a oportunidade de desenvolver um MVP que constava em uma aplicação web para upload de arquivos. Para construir essa solução, escolhi utilizar diferentes tecnologias com funções específicas. O framework Express foi selecionado para criar a estrutura do servidor web, enquanto o Bootstrap foi utilizado para garantir um design responsivo e amigável aos usuários.<!----><br><br><!---->Em relação à segurança dos dados, optei por utilizar o Firebase. Além disso, o MongoDB foi escolhido como banco de dados, permitindo um gerenciamento eficiente e escalável dos dados.<!----><br><br><!---->Para garantir a proteção das informações sensíveis, como senhas dos usuários, implementei o Bcrypt JS, uma biblioteca de criptografia que adiciona uma camada adicional de segurança aos dados armazenados.<!----><br><br><!---->Essa experiência de estágio me proporcionou a oportunidade de aplicar minhas habilidades técnicas em um projeto real, ao mesmo tempo em que me permitiu aprender sobre o desenvolvimento web, segurança de dados e integração de diversas tecnologias. Foi um desafio enriquecedor que contribuiu para o meu crescimento profissional.<!----></span><span class="visually-hidden"><!---->Durante o meu estágio tive a oportunidade de desenvolver um MVP que constava em uma aplicação web para upload de arquivos. Para construir essa solução, escolhi utilizar diferentes tecnologias com funções específicas. O framework Express foi selecionado para criar a estrutura do servidor web, enquanto o Bootstrap foi utilizado para garantir um design responsivo e amigável aos usuários.
+  Em relação à segurança dos dados, optei por utilizar o Firebase. Além disso, o MongoDB foi escolhido como banco de dados, permitindo um gerenciamento eficiente e escalável dos dados.
+  Para garantir a proteção das informações sensíveis, como senhas dos usuários, implementei o Bcrypt JS, uma biblioteca de criptografia que adiciona uma camada adicional de segurança aos dados armazenados.
+  Essa experiência de estágio me proporcionou a oportunidade de aplicar minhas habilidades técnicas em um projeto real, ao mesmo tempo em que me permitiu aprender sobre o desenvolvimento web, segurança de dados e integração de diversas tecnologias. Foi um desafio enriquecedor que contribuiu para o meu crescimento profissional.<!----></span>
+  
+  
+  <!----></div>
+  </div>
+  </div>
+  </div>
+  </li>
+  </ul>
+  <!----> </div>
+  </li>
+  <li class=" pvs-list__item--one-column">
+  <div class="pvs-list__outer-container">
+  <!----> <ul class="pvs-list
+  ">
+  <li class="pvs-list__item--with-top-padding pvs-list__item--one-column">
+  <div class="display-flex ">
+  <div class="
+  display-flex full-width">
+  <div class="pv-shared-text-with-see-more full-width t-14 t-normal t-black display-flex align-items-center">
+  <div class="inline-show-more-text
+  inline-show-more-text--is-collapsed
+  inline-show-more-text--is-collapsed-with-line-clamp
+  full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+  <span aria-hidden="true"><strong><!---->Competências:<!----></strong><span class="white-space-pre"> </span>Gestão de projetos · Segurança dos dados · Desenvolvimento web · Comunicação<!----></span><span class="visually-hidden"><strong><!---->Competências:<!----></strong><span class="white-space-pre"> </span>Gestão de projetos · Segurança dos dados · Desenvolvimento web · Comunicação<!----></span>
+  <!----></div>
+  </div>
+  </div>
+  </div>
+  </li>
+  </ul>
+  <!----> </div>
+  </li>
+  </ul>
+  <!----> </div>
+  </div>
+  </div>
+  </li>
+  
+  
+  <li class="artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column">
+  <!----> <div class="pvs-entity
+  pvs-entity--padded pvs-list__item--no-padding-in-columns
+  ">
+  <div>
+  <a data-field="experience_company_logo" class="optional-action-target-wrapper
+  display-flex" target="_self" href="https://www.linkedin.com/company/69708361/">
+  <div class="ivm-image-view-model pvs-entity__image ">
+  <div class="ivm-view-attr__img-wrapper ivm-view-attr__img-wrapper--use-img-tag display-flex
+  ">
+  <!----> <img src="https://media.licdn.com/dms/image/D4D0BAQFpQwZ8RCJpXQ/company-logo_100_100/0/1690922690239?e=1700092800&amp;v=beta&amp;t=zFEzrGe17HBa4tm_wMcSzCTH_hNRDAerrqG4dAINcdo" loading="lazy" alt="Logo da empresa Inteli - Instituto de Tecnologia e Liderança" id="ember12026" class="ivm-view-attr__img--centered EntityPhoto-square-3 evi-image lazy-image ember-view">
+  </div>
+  </div>
+  </a>
+  </div>
+  <div class="display-flex flex-column full-width align-self-center">
+  <div class="display-flex flex-row justify-space-between">
+  <div class="
+  display-flex flex-column full-width">
+  <div class="display-flex flex-wrap align-items-center full-height">
+  <div class="display-flex ">
+  <div class="
+  display-flex full-width">
+  <div class="display-flex align-items-center
+  mr1 t-bold">
+  <span aria-hidden="true"><!----><b>Comunicação e marketing</b><!----></span><span class="visually-hidden"><!---->Comunicação e marketing<!----></span>
+  </div>
+  </div>
+  </div>
+  <!----><!----><!----> </div>
+  <span class="t-14 t-normal">
+  <span aria-hidden="true"><!---->Inteli - Instituto de Tecnologia e Liderança · Temporário<!----></span><span class="visually-hidden"><!---->Inteli - Instituto de Tecnologia e Liderança · Temporário<!----></span>
+  </span>
+  <span class="t-14 t-normal t-black--light">
+  <span aria-hidden="true"><!---->mai de 2022 - jan de 2023 · 9 meses<!----></span><span class="visually-hidden"><!---->mai de 2022 - jan de 2023 · 9 meses<!----></span>
+  </span>
+  <span class="t-14 t-normal t-black--light">
+  <span aria-hidden="true"><!---->São Paulo, São Paulo, Brasil<!----></span><span class="visually-hidden"><!---->São Paulo, São Paulo, Brasil<!----></span>
+  </span>
+  </div>
+  <!---->
+  <div class="pvs-entity__action-container">
+  <!----> </div>
+  </div>
+  <!----> </div>
+  </div>
+  </li>
+  
+  
+  <li class="artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column">
+  <!----> <div class="pvs-entity
+  pvs-entity--padded pvs-list__item--no-padding-in-columns
+  ">
+  <div>
+  <a data-field="experience_company_logo" class="optional-action-target-wrapper
+  display-flex" target="_self" href="https://www.linkedin.com/company/654090/">
+  <div class="ivm-image-view-model pvs-entity__image ">
+  <div class="ivm-view-attr__img-wrapper ivm-view-attr__img-wrapper--use-img-tag display-flex
+  ">
+  <!----> <img src="https://media.licdn.com/dms/image/C4E0BAQE0wyub1rswiA/company-logo_100_100/0/1654720569097?e=1700092800&amp;v=beta&amp;t=MjSz3XAX_YHIAH7Bt0Ssyk3a8bmpIYEDDQDJrcCvffM" loading="lazy" alt="Logo da empresa BTG Pactual" id="ember12027" class="ivm-view-attr__img--centered EntityPhoto-square-3 evi-image lazy-image ember-view">
+  </div>
+  </div>
+  </a>
+  </div>
+  <div class="display-flex flex-column full-width align-self-center">
+  <div class="display-flex flex-row justify-space-between">
+  <div class="
+  display-flex flex-column full-width">
+  <div class="display-flex flex-wrap align-items-center full-height">
+  <div class="display-flex ">
+  <div class="
+  display-flex full-width">
+  <div class="display-flex align-items-center
+  mr1 t-bold">
+  <span aria-hidden="true"><!----><b>Estagiário de tecnologia</b><!----></span><span class="visually-hidden"><!---->Estágio De Férias<!----></span>
+  </div>
+  </div>
+  </div>
+  <!----><!----><!----> </div>
+  <span class="t-14 t-normal">
+  <span aria-hidden="true"><!---->BTG Pactual · Estágio<!----></span><span class="visually-hidden"><!---->BTG Pactual · Estágio<!----></span>
+  </span>
+  <span class="t-14 t-normal t-black--light">
+  <span aria-hidden="true"><!---->jul de 2022 · 1 mês<!----></span><span class="visually-hidden"><!---->jul de 2022 · 1 mês<!----></span>
+  </span>
+  <span class="t-14 t-normal t-black--light">
+  <span aria-hidden="true"><!---->São Paulo, São Paulo, Brasil<!----></span><span class="visually-hidden"><!---->São Paulo, São Paulo, Brasil<!----></span>
+  </span>
+  </div>
+  <!---->
+  <div class="pvs-entity__action-container">
+  <!----> </div>
+  </div>
+  <div class="pvs-list__outer-container">
+  <!----> <ul class="pvs-list
+  ">
+  <li class=" pvs-list__item--one-column">
+  <div class="pvs-list__outer-container">
+  <!----> <ul class="pvs-list
+  ">
+  <li class="pvs-list__item--with-top-padding pvs-list__item--one-column">
+  <div class="display-flex ">
+  <div class="
+  display-flex full-width">
+  <div class="pv-shared-text-with-see-more full-width t-14 t-normal t-black display-flex align-items-center">
+  <div class="inline-show-more-text
+  inline-show-more-text--is-collapsed
+  inline-show-more-text--is-collapsed-with-line-clamp
+  full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+  <span aria-hidden="true"><!---->Durante 4 semanas no time IT CRM, fui responsável pela construção de Email Marketing em HTML, produção de queries ao banco de dados e criação de jornadas para o usuário. Essa experiência proporcionou aprendizado prático em IT CRM, habilidades em HTML, gerenciamento de dados e uso de ferramentas de automação, como SalesForce. Além disso, a equipe adotou a metodologia Scrum para organizar e acompanhar o projeto ao longo do tempo, garantindo o cumprimento dos prazos estabelecidos. Essa experiência me permitiu compreender como um time de alto desempenho se organiza e me trouxe uma visão valiosa sobre a importância da colaboração e adaptação às mudanças no ambiente de trabalho.<!----></span><span class="visually-hidden"><!---->Durante 4 semanas no time IT CRM, fui responsável pela construção de Email Marketing em HTML, produção de queries ao banco de dados e criação de jornadas para o usuário. Essa experiência proporcionou aprendizado prático em IT CRM, habilidades em HTML, gerenciamento de dados e uso de ferramentas de automação, como SalesForce. Além disso, a equipe adotou a metodologia Scrum para organizar e acompanhar o projeto ao longo do tempo, garantindo o cumprimento dos prazos estabelecidos. Essa experiência me permitiu compreender como um time de alto desempenho se organiza e me trouxe uma visão valiosa sobre a importância da colaboração e adaptação às mudanças no ambiente de trabalho.<!----></span>
+  
+  
+  <!----></div>
+  </div>
+  </div>
+  </div>
+  </li>
+  </ul>
+  <!----> </div>
+  </li>
+  <li class=" pvs-list__item--one-column">
+  <div class="pvs-list__outer-container">
+  <!----> <ul class="pvs-list
+  ">
+  <li class="pvs-list__item--with-top-padding pvs-list__item--one-column">
+  <div class="display-flex ">
+  <div class="
+  display-flex full-width">
+  <div class="pv-shared-text-with-see-more full-width t-14 t-normal t-black display-flex align-items-center">
+  <div class="inline-show-more-text
+  inline-show-more-text--is-collapsed
+  inline-show-more-text--is-collapsed-with-line-clamp
+  full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+  <span aria-hidden="true"><strong><!---->Competências:<!----></strong><span class="white-space-pre"> </span>Práticas de engenharia de software · Scrum · Experiência do usuário (UX) · Salesforce.com<!----></span><span class="visually-hidden"><strong><!---->Competências:<!----></strong><span class="white-space-pre"> </span>Práticas de engenharia de software · Scrum · Experiência do usuário (UX) · Salesforce.com<!----></span>
+  <!----></div>
+  </div>
+  </div>
+  </div>
+  </li>
+  </ul>
+  <!----> </div>
+  </li>
+  </ul>
+  <!----> </div>
+  </div>
+  </div>
+  </li>
+  
+  
+  <li class="artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column">
+  <!----> <div class="pvs-entity
+  pvs-entity--padded pvs-list__item--no-padding-in-columns
+  ">
+  <br>
+  <div>
+  <a data-field="experience_company_logo" class="optional-action-target-wrapper
+  display-flex" target="_self" href="https://www.linkedin.com/company/85088841/">
+  <div class="ivm-image-view-model pvs-entity__image ">
+  <div class="ivm-view-attr__img-wrapper ivm-view-attr__img-wrapper--use-img-tag display-flex
+  ">
+  <!----> <img src="https://media.licdn.com/dms/image/C4D0BAQEK51sd1Ttztw/company-logo_100_100/0/1653412015898?e=1700092800&amp;v=beta&amp;t=YBbUdvCMivgoBV7sRu4hpW0axCd4Yi-pf22PEDT0Aaw" loading="lazy" alt="Logo da empresa Central Estudantil - Inteli" id="ember12032" class="ivm-view-attr__img--centered EntityPhoto-square-3 evi-image lazy-image ember-view">
+  </div>
+  </div>
+  </a>
+  </div>
+  <div class="display-flex flex-column full-width align-self-center">
+  <div class="display-flex flex-row justify-space-between">
+  <div class="
+  display-flex flex-column full-width">
+  <div class="display-flex flex-wrap align-items-center full-height">
+  <div class="display-flex ">
+  <div class="
+  display-flex full-width">
+  <div class="display-flex align-items-center
+  mr1 t-bold">
+  <span aria-hidden="true"><!----><b>Diretor de marketing e produtos</b><!----></span><span class="visually-hidden"><!---->Diretor de marketing e produtos<!----></span>
+  </div>
+  </div>
+  </div>
+  <!----><!----><!----> </div>
+  <span class="t-14 t-normal">
+  <span aria-hidden="true"><!---->Central Estudantil - Inteli · Meio período<!----></span><span class="visually-hidden"><!---->Central Estudantil - Inteli · Meio período<!----></span>
+  </span>
+  <span class="t-14 t-normal t-black--light">
+  <span aria-hidden="true"><!---->mar de 2022 - jun de 2022 · 4 meses<!----></span><span class="visually-hidden"><!---->mar de 2022 - jun de 2022 · 4 meses<!----></span>
+  </span>
+  <span class="t-14 t-normal t-black--light">
+  <span aria-hidden="true"><!---->São Paulo, São Paulo, Brasil<!----></span><span class="visually-hidden"><!---->São Paulo, São Paulo, Brasil<!----></span>
+  </span>
+  </div>
+  <!---->
+  <div class="pvs-entity__action-container">
+  <!----> </div>
+  </div>
+  <div class="pvs-list__outer-container">
+  <!----> <ul class="pvs-list
+  ">
+  <li class=" pvs-list__item--one-column">
+  <div class="pvs-list__outer-container">
+  <!----> <ul class="pvs-list
+  ">
+  <li class="pvs-list__item--with-top-padding pvs-list__item--one-column">
+  <div class="display-flex ">
+  <div class="
+  display-flex full-width">
+  <div class="pv-shared-text-with-see-more full-width t-14 t-normal t-black display-flex align-items-center">
+  <div class="inline-show-more-text
+  inline-show-more-text--is-collapsed
+  inline-show-more-text--is-collapsed-with-line-clamp
+  full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+  <span aria-hidden="true"><!---->Está sob minha responsabilidade a gestão da comunicação, elaboração de produtos e serviço da Central Estudantil, uma organização estudantil que visa dar voz aos alunos do Intel. Gerencio um pequeno time que me auxilia na criação de campanhas publicitárias, manutenção das redes sociais e na criação de design de peças gráficas.<!----></span><span class="visually-hidden"><!---->Está sob minha responsabilidade a gestão da comunicação, elaboração de produtos e serviço da Central Estudantil, uma organização estudantil que visa dar voz aos alunos do Intel. Gerencio um pequeno time que me auxilia na criação de campanhas publicitárias, manutenção das redes sociais e na criação de design de peças gráficas.<!----></span>
+  <!----></div>
+  </div>
+  </div>
+  </div>
+  </li>
+  </ul>
+  <!----> </div>
+  </li>
+  <li class=" pvs-list__item--one-column">
+  <div class="pvs-list__outer-container">
+  <!----> <ul class="pvs-list
+  ">
+  <li class="pvs-list__item--with-top-padding pvs-list__item--one-column">
+  <a class="optional-action-target-wrapper" target="_self" href="https://www.linkedin.com/in/jv-oliveira-rodrigues/overlay/1635491409879/single-media-viewer?type=LINK&amp;profileId=ACoAADcIE3wBcJXPyNbg8s4VJQDi1pcQvV044pk">
+  <div class="display-flex flex-row">
+  <div>
+  <div class="pvs-thumbnail__wrapper">
+  <figure class="pvs-thumbnail">
+  <li-icon aria-hidden="true" type="image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+  <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm1 13a1 1 0 01-.29.71L16 14l-2 2-6-6-4 4V7a1 1 0 011-1h14a1 1 0 011 1zm-2-7a2 2 0 11-2-2 2 2 0 012 2z"></path>
+  </svg></li-icon>
+  <!---->
+  <!----> </figure>
+  </div>
+  </div>
+  <div class="flex-column ml1 align-self-center">
+  <div class="inline-show-more-text
+  inline-show-more-text--is-collapsed
+  inline-show-more-text--is-collapsed-with-line-clamp
+  t-14 t-bold break-words" style="-webkit-line-clamp:2;" tabindex="-1">
+  <span aria-hidden="true"><!---->Central Estudantil Inteli's (@ce_inteli) Instagram profile • 3 photos and videos<!----></span><span class="visually-hidden"><!---->Central Estudantil Inteli's (@ce_inteli) Instagram profile • 3 photos and videos<!----></span>
+  <!----></div>
+  <div class="display-flex ">
+  <div class="
+  display-flex full-width">
+  <div class="pv-shared-text-with-see-more full-width t-14 t-normal t-black display-flex align-items-center">
+  <div class="inline-show-more-text
+  inline-show-more-text--is-collapsed
+  inline-show-more-text--is-collapsed-with-line-clamp
+  full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+  <span aria-hidden="true"><!---->Nossa Instagram.<!----></span><span class="visually-hidden"><!---->Nossa Instagram.<!----></span>
+  <!----></div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </a>
+  </li>
+  </ul>
+  <!----> </div>
+  </li>
+  </ul>
+  <!----> </div>
+  </div>
+  </div>
+  </li>
+  
+  
+  <li class="artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column">
+  <!----> <div class="pvs-entity
+  pvs-entity--padded pvs-list__item--no-padding-in-columns
+  ">
+  <div>
+  <a data-field="experience_company_logo" class="optional-action-target-wrapper
+  display-flex" target="_self" tabindex="-1" aria-hidden="true" href="https://www.linkedin.com/search/results/all/?keywords=Storein">
+  <div class="ivm-image-view-model pvs-entity__image ">
+  <div class="ivm-view-attr__img-wrapper ivm-view-attr__img-wrapper--use-img-tag display-flex
+  ">
+  <div class="EntityPhoto-square-3-ghost-company ivm-view-attr__ghost-entity ">
+  <!----> </div>
+  </div>
+  </div>
+  </a>
+  </div>
+  <div class="display-flex flex-column full-width align-self-center">
+  <div class="display-flex flex-row justify-space-between">
+  <div class="
+  display-flex flex-column full-width">
+  <div class="display-flex flex-wrap align-items-center full-height">
+  <div class="display-flex ">
+  <div class="
+  display-flex full-width">
+  <div class="display-flex align-items-center
+  mr1 t-bold">
+  <span aria-hidden="true"><!---->Designer<!----></span><span class="visually-hidden"><!---->Designer<!----></span>
+  </div>
+  </div>
+  </div>
+  <!----><!----><!----> </div>
+  <span class="t-14 t-normal">
+  <span aria-hidden="true"><!---->Storein · Temporário<!----></span><span class="visually-hidden"><!---->Storein · Temporário<!----></span>
+  </span>
+  <span class="t-14 t-normal t-black--light">
+  <span aria-hidden="true"><!---->mai de 2020 - set de 2020 · 5 meses<!----></span><span class="visually-hidden"><!---->mai de 2020 - set de 2020 · 5 meses<!----></span>
+  </span>
+  <!---->
+  </div>
+  <!---->
+  <div class="pvs-entity__action-container">
+  <!----> </div>
+  </div>
+  <!----> </div>
+  </div>
+  </li>
+  </div>
+  <!----> </div>
+  </div>
+  <div class="card">
+  <p>
+  <h4>Formação</h4>
+  <br>
+  </p>
+  <ul class="pvs-list">
+  <li class="artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column">
+  <!----> <div class="pvs-entity
+  pvs-entity--padded pvs-list__item--no-padding-in-columns
+  ">
+  <div>
+  <a class="optional-action-target-wrapper
+  display-flex" target="_self" href="https://www.linkedin.com/company/69708361/">
+  <div class="ivm-image-view-model pvs-entity__image ">
+  <div class="ivm-view-attr__img-wrapper ivm-view-attr__img-wrapper--use-img-tag display-flex
+  ">
+  <!----> <img src="https://media.licdn.com/dms/image/D4D0BAQFpQwZ8RCJpXQ/company-logo_100_100/0/1690922690239?e=1700092800&amp;v=beta&amp;t=zFEzrGe17HBa4tm_wMcSzCTH_hNRDAerrqG4dAINcdo" loading="lazy" alt="Logo da empresa Inteli - Instituto de Tecnologia e Liderança" id="ember12036" class="ivm-view-attr__img--centered EntityPhoto-square-3 evi-image lazy-image ember-view">
+  </div>
+  </div>
+  </a>
+  </div>
+  
+  
+  <div class="display-flex flex-column full-width align-self-center">
+  <div class="display-flex flex-row justify-space-between">
+  <a class="optional-action-target-wrapper
+  display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/company/69708361/">
+  <div class="display-flex flex-wrap align-items-center full-height">
+  <div class="display-flex ">
+  <div class="
+  display-flex full-width">
+  <div class="display-flex align-items-center
+  mr1 hoverable-link-text t-bold">
+  <span aria-hidden="true"><!---->Inteli - Instituto de Tecnologia e Liderança<!----></span><span class="visually-hidden"><!---->Inteli - Instituto de Tecnologia e Liderança<!----></span>
+  </div>
+  </div>
+  </div>
+  <!----><!----><!----> </div>
+  <span class="t-14 t-normal">
+  <span aria-hidden="true"><!---->Bachelor of Engineering - BE<!----></span><span class="visually-hidden"><!---->Bachelor of Engineering - BE<!----></span>
+  </span>
+  <span class="t-14 t-normal t-black--light">
+  <span aria-hidden="true"><!---->fev de 2022 - set de 2026<!----></span><span class="visually-hidden"><!---->fev de 2022 - set de 2026<!----></span>
+  </span>
+  <!----> </a>
+  
+  
+  <!---->
+  <div class="pvs-entity__action-container">
+  <!----> </div>
+  </div>
+  
+  
+  <div class="pvs-list__outer-container">
+  <!----> <ul class="pvs-list
+  ">
+  <li class=" pvs-list__item--one-column">
+  <div class="
+  mv1
+  display-flex align-items-center">
+  <div class="display-flex link-without-hover-visited">
+  <!---->
+  <div class="display-flex ">
+  <div class="
+  display-flex full-width">
+  <div class="pv-shared-text-with-see-more full-width t-14 t-normal t-black display-flex align-items-center">
+  <div class="inline-show-more-text
+  inline-show-more-text--is-collapsed
+  inline-show-more-text--is-collapsed-with-line-clamp
+  full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+  
+  
+  <span aria-hidden="true"><!---->Nota: Superior a 7.0<!----></span><span class="visually-hidden"><!---->Nota: Superior a 7.0<!----></span>
+  
+  
+  <!----></div>
+  </div>
+  
+  
+  </div>
+  </div>
+  </div>
+  <!----> </div>
+  </li>
+  </ul>
+  <!----> </div>
+  </div>
+  </div>
+  </li>
+  </ul>
+  </div>
+  </div>
+{% endblock %} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

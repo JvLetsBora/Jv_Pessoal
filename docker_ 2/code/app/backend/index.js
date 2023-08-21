@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 const path = require("path")
 const sqlite3 = require('sqlite3').verbose();
 const app = express();
-const DBPATH = 'dbteste.db';
+const DBPATH = 'backend/dbteste.db';
 
 app.use(express.static(path.join(__dirname,"../frontend")));
 app.use(express.json());
@@ -22,7 +22,7 @@ app.get('/all', (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
 	var db = new sqlite3.Database(DBPATH); // Abre o ban	co
- 	var sql = 'SELECT * FROM main ORDER BY idFunc';
+ 	var sql = 'SELECT * FROM main ORDER BY id';
 	db.all(sql, [],  (err, rows ) => {
 		if (err) {
 		    throw err;
@@ -38,7 +38,7 @@ app.post('/add', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro 
 
-	sql = `INSERT INTO main (titulo, body_) VALUES (${req.body.titulo}, ${req.body.body_})`;
+	sql = `INSERT INTO main (titulo, body_) VALUES ('${req.body.titulo}', '${req.body.body_}')`;
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	console.log(sql);
 	db.run(sql, [],  err => {

@@ -56,7 +56,7 @@ app.patch('/atualizar', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar erro
 
-	sql = `UPDATE main SET titulo = ${req.body.titulo}, body_ = '${req.body.body_}' WHERE id = ${req.body.id}`;
+	sql = `UPDATE main SET titulo = '${req.body.titulo}', body_ = '${req.body.body_}' WHERE id = ${req.body.id}`;
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
 		if (err) {

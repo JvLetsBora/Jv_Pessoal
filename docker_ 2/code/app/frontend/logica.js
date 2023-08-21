@@ -11,7 +11,7 @@ function mostrarPopup(a) {
     titulo_atualizar.value = a[1]
     body_atualizar.value = a[2]
     const corpo_at = document.getElementById('atualizador'); 
-    corpo_at.innerHTML = `<button type="submit" onclick="atualiza(${a[0]},'${a[1]}',${a[2]})">Atualizar</button>`
+    corpo_at.innerHTML = `<button type="submit" onclick="atualiza([${a[0]},'${a[1]}','${a[2]}'])">Atualizar</button>`
     popup.style.display = 'block';
 }
 
@@ -70,7 +70,31 @@ function add() {
 
 
 function atualiza(lista) {
-    console.log(lista)
+    const body_atualizar = document.getElementById('body_atualizar');
+    const titulo_atualizar = document.getElementById('titulo_atualizar');
+
+    const url = `${root}/atualizar`; // Substitua pela URL da sua rota PATCH
+    const data = {
+        id: lista[0],
+        titulo: `${titulo_atualizar.value}`,
+        body_: `${body_atualizar.value}`
+    }; // Substitua pelos dados que você deseja enviar para a rota PATCH
+
+    fetch(url, {
+    method: 'PATCH',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+        throw new Error('Não foi possível completar a requisição.');
+        }
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+    });
 }
 
 

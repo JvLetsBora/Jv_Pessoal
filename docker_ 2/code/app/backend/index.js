@@ -13,16 +13,16 @@ app.use(express.static(path.join(__dirname,"../frontend")));
 app.use(express.json());
 
 
-/* Definição das rotas  
+// Definição das rotas 
 
 
-// Retorna todos registros
-app.get('/profissionais', (req, res) => {
+// Retorna todos registros 
+app.get('/all', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
 	var db = new sqlite3.Database(DBPATH); // Abre o ban	co
- 	var sql = 'SELECT * FROM PROFISSIONAIS ORDER BY idFunc';
+ 	var sql = 'SELECT * FROM main ORDER BY idFunc';
 	db.all(sql, [],  (err, rows ) => {
 		if (err) {
 		    throw err;
@@ -34,11 +34,11 @@ app.get('/profissionais', (req, res) => {
 });
 
 // Insere um registro 
-app.post('/alocacao/adicionar', urlencodedParser, (req, res) => {
+app.post('/add', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro 
 
-	sql = `INSERT INTO ALOCACAO (idFunc, idProject, horasAlocadasProjeto, mes, ano) VALUES (${req.body.idFunc}, ${req.body.idProject}, ${req.body.horasAlocadasProjeto}, '${req.body.mes}', ${req.body.ano})`;
+	sql = `INSERT INTO main (titulo, body_) VALUES (${req.body.titulo}, ${req.body.body_})`;
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	console.log(sql);
 	db.run(sql, [],  err => {
@@ -52,11 +52,11 @@ app.post('/alocacao/adicionar', urlencodedParser, (req, res) => {
 });
 
 // Atualiza um registro 
-app.patch('/alocacao/atualizar', urlencodedParser, (req, res) => {
+app.patch('/atualizar', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar erro
 
-	sql = `UPDATE ALOCACAO SET horasAlocadasProjeto = ${req.body.horasAlocadasProjeto}, mes = '${req.body.mes}', ano = ${req.body.ano} WHERE idAlocacao = ${req.body.idAlocacao}`;
+	sql = `UPDATE main SET titulo = ${req.body.titulo}, body_ = '${req.body.body_}' WHERE id = ${req.body.id}`;
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
 		if (err) {
@@ -69,11 +69,11 @@ app.patch('/alocacao/atualizar', urlencodedParser, (req, res) => {
 
 
 // Exclui um registro
-app.delete('/alocacao/deletar', urlencodedParser, (req, res) => {
+app.delete('/deletar', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar erro 
 
-	sql = `DELETE FROM ALOCACAO WHERE idAlocacao = ${req.body.idAlocacao}`;
+	sql = `DELETE FROM main WHERE id = ${req.body.id}`;
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
 		if (err) {
@@ -85,7 +85,7 @@ app.delete('/alocacao/deletar', urlencodedParser, (req, res) => {
 });
 
 
-*/
+
 
 /* Inicia o servidor */
 app.listen(port, () => {

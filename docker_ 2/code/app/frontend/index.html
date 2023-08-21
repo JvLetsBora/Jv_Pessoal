@@ -53,7 +53,7 @@
             align-items: center;
             justify-content: center;
         }
-        #nota{
+        .nota{
             border-radius: 10px;
             width: 35vw;
             flex-direction: column;
@@ -98,6 +98,7 @@
             margin: 20px;
             max-width: 300px;
             min-width: 200px;
+            height: fit-content;
             word-break: break-all;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
         }
@@ -169,21 +170,21 @@
 <body>
     <div id="main">
         <div id="top">
-            <div id="nota">
+            <form id="nota" class="nota">
                 <div>
-                    <input class="campo-texto titulo" type="text" placeholder="Titulo da sua anotação">
+                    <input id="titulo_add" class="campo-texto titulo" type="text" placeholder="Titulo da sua anotação">
                 </div>
                 <div>
-                    <input class="campo-texto" type="text" placeholder="Toque para anotar...">
-                    <button onclick="add()">Adicionar</button>
+                    <input id="body_add" class="campo-texto" type="text" placeholder="Toque para anotar...">
+                    <button type="submit" onclick="add(false)">Adicionar</button>
                 </div>
-            </div>
+            </form>
         </div>
         <div id="line"></div>
         <div id="down">
             <ul  id="conteudo">
                 <li id="0">
-                    <div class="titulo">huifhbywebfybweyefb</div>
+                    <div class="titulo">Teste</div>
                     <div style="margin: 0px; color: #565656;">
                         mfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-ueswmfiasjeifsuwerfh-uesw
                     </div>
@@ -198,14 +199,14 @@
     <div>
         <div class="popup" id="popup">
             <div class="conteudo">
-                <div id="nota">
+                <div id="notaPop" class="nota">
                     <div id="header">
-                        <input class="campo-texto titulo" type="text" placeholder="Titulo da sua anotação">
+                        <input id="titulo_atualizar" class="campo-texto titulo" type="text" placeholder="Titulo da sua anotação">
                         <span class="fechar" onclick="fecharPopup()">×</span>
                     </div>
                     <div>
-                        <input class="campo-texto" type="text" placeholder="Toque para anotar...">
-                        <button onclick="add()">Adicionar</button>
+                        <input id="body_atualizar" class="campo-texto" type="text" placeholder="Toque para anotar...">
+                        <button type="submit" onclick="atualiza(true)">Atualizar</button>
                     </div>
                 </div>
             </div>

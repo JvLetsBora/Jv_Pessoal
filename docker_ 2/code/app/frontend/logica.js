@@ -22,7 +22,33 @@ function fecharPopup() {
 
 
 function deletarNota(a){
-    confirm(a)
+    confirm("Tem certeza que quer deletar?")
+
+    const url = `${root}/deletar`; 
+    const data = {
+        id: a
+    };
+
+    fetch(url, {
+    method: 'DELETE',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+        throw new Error('Não foi possível completar a requisição.');
+        }
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+    });
+
+    location.reload(true);
+
+    
+
 }
 
 function add() {
@@ -73,12 +99,12 @@ function atualiza(lista) {
     const body_atualizar = document.getElementById('body_atualizar');
     const titulo_atualizar = document.getElementById('titulo_atualizar');
 
-    const url = `${root}/atualizar`; // Substitua pela URL da sua rota PATCH
+    const url = `${root}/atualizar`; 
     const data = {
         id: lista[0],
         titulo: `${titulo_atualizar.value}`,
         body_: `${body_atualizar.value}`
-    }; // Substitua pelos dados que você deseja enviar para a rota PATCH
+    }; 
 
     fetch(url, {
     method: 'PATCH',
@@ -95,6 +121,8 @@ function atualiza(lista) {
     .catch(error => {
         console.error('Erro:', error);
     });
+
+    fecharPopup()
 }
 
 

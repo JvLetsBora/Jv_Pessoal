@@ -1,6 +1,8 @@
 const express = require('express'); 
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
+const process = require("process")
+const dn = require("dotenv")
 //const hostname = '127.0.0.1';
 
 const port = process.env.PORT || 3000;
@@ -12,9 +14,11 @@ const DBPATH = 'backend/dbteste.db';
 app.use(express.static(path.join(__dirname,"../frontend")));
 app.use(express.json());
 
+dn.config()
+const db_user = process.env.USER_
+const db_password = process.env.PASSWORD_
 
 // Definição das rotas 
-
 
 // Retorna todos registros 
 app.get('/all', (req, res) => {

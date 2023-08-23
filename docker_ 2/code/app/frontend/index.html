@@ -82,16 +82,16 @@
     <script>
         document.getElementById('loginForm').addEventListener('submit', function (e) {
             e.preventDefault(); // Impede o envio do formulário padrão
-            const body_add = document.getElementById('body_add');
-            const titulo_add = document.getElementById('titulo_add');
+            const user = document.getElementById('username');
+            const pass = document.getElementById('password');
 
             // URL para a qual você deseja fazer a solicitação POST
             let url = "http://localhost:3000/auth/login";
 
             // Dados que você deseja enviar no corpo da solicitação POST (no formato JSON)
             const dados = {
-                username: "titulo_add.value",
-                password:" body_add.value"
+                username: String(user.value),
+                password: String(pass.value)
             };
 
             // Configuração da solicitação POST
@@ -106,13 +106,25 @@
             // Fazendo a solicitação POST usando a API Fetch
             fetch(url, configuracao)
             .then(response => {
-                if (response.status === 200) {
-                    // A autenticação foi bem-sucedida, redirecionar ou fazer algo aqui
-                    window.location.href = '/app';
-                } else {
-                    // Exibir mensagem de erro
-                    document.getElementById('error-message').textContent = 'Credenciais inválidas. Tente novamente.';
+                if (!response.ok) {
+                    throw new Error('Não foi possível completar a requisição.');
                 }
+                return response.json()
+            })
+            .then(data =>{
+                console.log(data)
+                var conf = {
+
+                }
+                fetch(`http://localhost:3000/app/${user.value}`, conf)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Não foi possível completar a requisição.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao enviar a solicitação:', error);
+                });
             })
             .catch(error => {
                 console.error('Erro ao enviar a solicitação:', error);

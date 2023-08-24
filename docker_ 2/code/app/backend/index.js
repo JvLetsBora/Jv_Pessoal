@@ -5,6 +5,7 @@ require("dotenv").config();
 const jwt = require("jsonwebtoken");
 //const hostname = '127.0.0.1';
 
+const cookieParser = require('cookie-parser');
 const port = process.env.PORT || 3000;
 const path = require("path")
 const sqlite3 = require('sqlite3').verbose();
@@ -13,23 +14,22 @@ const DBPATH = 'backend/dbteste.db';
 
 app.use(express.static(path.join(__dirname,"../frontend")));
 app.use(express.json());
-
+app.use(cookieParser());
 
 
 
 // Definição das rotas 
 
-app.get('/app/:username',checkToken, (req, res) => {
+app.get('/app',checkToken, (req, res) => {
     // Acesse o caminho do arquivo HTML que deseja servir
-    const htmlFilePath = path.join(__dirname, '../frontend', 'app.html');
-
+    const htmlFilePath = path.join(__dirname, '../frontend/', 'app.html');
+	
     // Envie o arquivo HTML como resposta
     res.sendFile(htmlFilePath);
 });
 
 function checkToken(req, res, next) {
-	const authHeader = req.headers["authorization"];
-	const token = authHeader && authHeader.split(" ")[1];
+	const token = req.cookies.authToken;
   
 	if (!token) return res.status(401).json({ msg: "Acesso negado!" });
   
@@ -138,6 +138,10 @@ app.post("/auth/login", async (req, res) => {
             if (user && user.password === password) {
                 const secret = process.env.SECRET;
                 const token = jwt.sign({ id: username }, secret);
+				  // Armazene o token em um cookie seguro
+				res.cookie('authToken', token, {
+					maxAge: 3600000, // Tempo de vida do cookie em milissegundos (1 hora neste caso)
+				});
 
                 res.status(200).json({ msg: "Autenticação realizada com sucesso!", token });
             } else {

@@ -1,3 +1,15 @@
+## Arquitetura da solução
+O projeto foi dividido em dois contêineres devido à minha falta de familiaridade com a conternização. As partes descritas no arquivo docker-compose.yml, localizado neste diretório, são as seguintes:
+
+### Container do Banco de Dados (DB): 
+Este contêiner utiliza uma imagem oficial do PostgreSQL para armazenar os dados do aplicativo.
+
+### Container do Adminer: 
+Este contêiner carrega minha aplicação web chamada "todolist" diretamente do Docker Hub.
+
+
+## Instruções para lançar a aplicação
+Para o funcionamento dessa aplicação será necessario a abertura da pasta code inicia-la com o comando docker-compose up
 
 Este repositório contém uma aplicação web contida, onde utilizei o Uvicorn para servir uma página da web e o Docker para criar uma imagem e containerizar a aplicação. Durante a criação da imagem, baseei-me na versão python:3.9.4-buster e utilizei as ferramentas especificadas no arquivo requirements.txt para garantir todas as dependências necessárias. A estrutura do Dockerfile e do arquivo main.py foi planejada da seguinte forma:
 ### Definindo a imagem base

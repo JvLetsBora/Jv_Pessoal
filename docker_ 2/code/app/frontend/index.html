@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none; /* Removendo as bordas */
+            border-radius: 3px;
+            background-color: #cccccc; /* Adicionando um fundo cinza */
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="loginForm" action="/sua-rota-de-validacao" method="POST">
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required>
+
+        <input type="submit" value="Entrar">
+    </form>
+
+
+    <p id="error-message"></p>
+
+    <script>
+                function getCookie(name) {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.startsWith(name + '=')) {
+                    return cookie.substring(name.length + 1);
+                }
+            }
+            return null;
+        }
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Impede o envio do formulário padrão
+            const user = document.getElementById('username');
+            const pass = document.getElementById('password');
+
+
+            let url = "http://localhost:3000/auth/login";
+
+            // Dados que você deseja enviar no corpo da solicitação POST (no formato JSON)
+            const dados = {
+                username: String(user.value),
+                password: String(pass.value)
+            };
+
+            // Configuração da solicitação POST
+            const configuracao = {
+            method: 'POST', // Método HTTP POST
+            headers: {
+                'Content-Type': 'application/json' // Tipo de conteúdo JSON
+            },
+            body: JSON.stringify(dados) // Converte os dados em JSON e os envia no corpo da solicitação
+            };
+
+            // Fazendo a solicitação POST usando a API Fetch
+            fetch(url, configuracao)
+            .then(response => {
+                if (!response.ok) {
+                    document.getElementById("error-message").innerHTML = "Usuário ou senha inválida"
+                    throw new Error('Não foi possível completar a requisição.');
+                }
+                return response.json()
+            })
+            .then(data =>{
+                const authToken = getCookie('authToken');
+                console.log(authToken)
+                var conf = {
+                    method: 'GET',
+                    headers: {
+                    'Authorization': `Bearer ${data.token}`
+            }
+                }
+                fetch('http://localhost:3000/app', conf)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Não foi possível completar a requisição.');
+                    }
+                    window.location.href = "http://localhost:3000/app"
+                })
+                .catch(error => {
+                    console.error('Erro ao enviar a solicitação:', error);
+                });
+            })
+            .catch(error => {
+                console.error('Erro ao enviar a solicitação:', error);
+            });
+        });
+    </script>
+</body>
+</html>

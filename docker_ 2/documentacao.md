@@ -31,8 +31,8 @@ Execute o comando "docker-compose up" para inicializar a aplicação.
 **Caso apareça o erro:** <br>
 (node:1) UnhandledPromiseRejectionWarning: Error: connect ECONNREFUSED 172.19.0.2:5432
 <br>
-- Pare a aplicação com as teclas control + c ou dei o comando stop nos conteners dessa apliação.
-- Realize novamente o docker compose up
+- Pare a aplicação com as teclas "control + c" ou dei o comando stop nos conteners dessa aplicação.
+- Execulte novamente o comando "docker compose up".
 
 ## Instruções de Uso
 Após concluir os passos descritos na seção "Instruções para Iniciar a Aplicação", a aplicação web estará disponível em: http://localhost:3000/.

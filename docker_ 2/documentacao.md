@@ -9,7 +9,7 @@ A realização desse projeto foi dividida em:
 - **docker-compose.yml**: Arquivo responsável por subir a aplicação.
 
 ## Pré-requisitos
-Liste todos os pré-requisitos necessários para executar o projeto. Isso pode incluir linguagens de programação, bibliotecas, ferramentas ou serviços específicos.
+Para rodar essa aplicação é necessário ter o docker instalado.
 
 ## Arquitetura da solução
 O projeto foi dividido em dois contêineres devido à minha falta de familiaridade com a conternização. As partes descritas no arquivo docker-compose.yml, localizado neste diretório, são as seguintes:

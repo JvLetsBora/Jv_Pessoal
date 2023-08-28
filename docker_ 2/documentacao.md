@@ -3,13 +3,10 @@
 ## Estrutura de Pastas
 A realização desse projeto foi dividida em:
 
-- **/docs**: Contém a documentação do projeto.
-- **/src**: Contém o código-fonte principal.
-- **/public**: Contém arquivos públicos, como imagens ou recursos estáticos.
-- **/tests**: Contém os testes automatizados.
-- **/config**: Contém configurações do projeto.
-- **/scripts**: Contém scripts de utilidade para tarefas comuns.
-- **/dist**: Contém os arquivos gerados após a compilação ou construção do projeto.
+- **/code**: Pasta que contem a aplicação "app" na qual a imagem todolist foi criada.
+- - **/code/dockerfile**: Arquivo que cria a imagem.
+- - **/code/app**: Código da aplicação que estruturou a imagem todolist.
+- **docker-compose.yml**: Arquivo responsável por subir a aplicação.
 
 ## Pré-requisitos
 Liste todos os pré-requisitos necessários para executar o projeto. Isso pode incluir linguagens de programação, bibliotecas, ferramentas ou serviços específicos.

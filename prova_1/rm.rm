@@ -1,1 +1,2 @@
 
+Optei por usar uma versão do python no dockergfile do backend pois a aplicação para rodar usa python, já na aplicação do front usei uma base que suporta node. Em ambas as partes foi necessário rodar um código em RUN para instalar as depedências, no backe fiz isso por meio do install requiments.txt e no front por meio do npm i. Em ambas as images usei o expose para que elas tenham uma porta aberta de comunicação. 

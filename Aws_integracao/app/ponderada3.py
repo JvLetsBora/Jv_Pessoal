@@ -47,8 +47,22 @@ def prever(body):
   return predito[0]
 
 def new_data_pipeline(data_dict):
+    valor_para_gmail = 1 if data_dict['titulo'] == '_Gmail' else 0
+    valor_para_insta = 1 if data_dict['titulo'] == '_Instagram' else 0
+    valor_para_whats = 1 if data_dict['titulo'] == '_WhatsApp' else 0
+    valor_para_youtube = 1 if data_dict['titulo'] == '_YouTube' else 0
+    dados_format = [{
+    '_Gmail': valor_para_gmail,
+    '_Instagram': valor_para_insta,
+    '_WhatsApp': valor_para_whats,
+    '_YouTube': valor_para_youtube,
+    'Time': data_dict['body_'],
+    '_Manhã':0,
+    '_Noite':0,
+    '_Tarde':0
+    }]
     # Crie um DataFrame a partir do dicionário
-    new_data = pd.DataFrame(data_dict)
+    new_data = pd.DataFrame(dados_format)
     hora = int(new_data['Time'][0].split(':')[0])  # Extrai a hora como um número inteiro
     if 6 <= hora < 12:
         new_data['_Manhã'] = 1

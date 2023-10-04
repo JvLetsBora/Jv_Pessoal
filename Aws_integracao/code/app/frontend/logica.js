@@ -59,9 +59,11 @@ function add() {
 
     // Dados que você deseja enviar no corpo da solicitação POST (no formato JSON)
     const dados = {
-    titulo: titulo_add.value,
-    body_: body_add.value
+    titulo: "_"+titulo_add.value,
+    body_: body_add.value + ":00"
     };
+
+    console.log(dados)
 
     // Configuração da solicitação POST
     const configuracao = {

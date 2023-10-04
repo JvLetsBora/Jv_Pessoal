@@ -1,133 +1,60 @@
-
-# importações necessarias
 import pandas as pd
-import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.preprocessing import MinMaxScaler
+from datetime import datetime, timedelta
 
-df_read = pd.read_csv('./Activity_history.csv')
-
-df_read.isna().sum()
-
+df_read = pd.read_csv('/content/Activity_history.csv')
 df_traino = df_read.dropna()
 
-df_traino
+def convert_to_24h(time_str):
+    time_obj = datetime.strptime(time_str, "%I:%M:%S %p")
+    return time_obj.strftime("%H:%M:%S")
 
-df_traino["App name"].unique()
+def convert_to_timedelta(duration_str):
+    hours, minutes, seconds = map(int, duration_str.split(':'))
+    return timedelta(hours=hours, minutes=minutes, seconds=seconds)
 
-
-
+df_traino['Time'] = df_traino['Time'].apply(lambda x: convert_to_24h(x))
+df_traino['Duration'] = df_traino['Duration'].apply(lambda x: convert_to_timedelta(x))
+df_traino['Duration'] = df_traino['Duration'].apply(lambda x: pd.Timedelta(x).total_seconds())
 colunas_interresse = [
     "WhatsApp", "Instagram", "Gmail", "YouTube"
 ]
+df_traino = df_traino[df_traino['App name'].isin(colunas_interresse)]
+df_traino.drop(columns=['Date'], inplace=True)
+df_traino = pd.get_dummies(df_traino, columns=['App name'], prefix=[''])
 
-novo_df = df_traino.groupby(['App name', 'Date'])['Duration'].sum().reset_index()
+def periodo_do_dia(hora):
+    if 6 <= hora < 12:
+        return 'Manhã'
+    elif 12 <= hora < 18:
+        return 'Tarde'
+    else:
+        return 'Noite'
 
-segundos = df_traino["Duration"]
+df_traino['Periodo do Dia'] = pd.to_datetime(df_traino['Time']).dt.hour.apply(periodo_do_dia)
+df_traino = pd.get_dummies(df_traino, columns=['Periodo do Dia'], prefix=[''])
 
-
-segundos = []
-for time in df_traino["Duration"]:
-  a = time.split(":")
-  b = (int(a[0])*100000) + (int(a[1])*1000) + (int(a[2])*10)
-  segundos.append(b)
-
-df_traino["Duration"] = segundos
-
-df_traino
-
-df_filtrado = df_traino[df_traino['App name'].isin(colunas_interresse)]
-
-df_traino = df_filtrado
-
-
-times = []
-for time in df_traino["Time"]:
-  a = time.split(":")
-  a2 = a[2].split(" ")
-  b = (int(a[0])*100000) + (int(a[1])*1000) + (int(a2[0])*10)
-  times.append(b)
-
-df_traino["Time"] = times
-
-
-
-lb = LabelEncoder()
-
-
-apps = lb.fit_transform(df_traino["App name"])
-apps
-
-df_traino["labels_app"] = apps
-df_traino
-
-oneHot = OneHotEncoder()
-arr = oneHot.fit_transform(df_traino[["labels_app"]]).toarray()
-arr
-
-one_hot_df = pd.DataFrame(arr, columns=[f'App_id_{i}' for i in range(arr.shape[1])])
-one_hot_df
-
-new_df = df = pd.concat([df_traino, one_hot_df], axis=1)
-new_df = new_df.drop(["App name","labels_app","Date" ],axis=1)
-
-new_df
-
-
-scaler = MinMaxScaler()
-
-df_scaled = scaler.fit_transform(new_df[["Time"]])
-
-df_scaled = pd.DataFrame(df_scaled, columns=["Time"])
-
-
-new_df=new_df.dropna()
-
-new_df.head(100)
-
-
-X = new_df.drop('Duration', axis=1)  # Features
-y = new_df['Duration']  # Target variable
-
-# Dividindo os dados em conjuntos de treinamento e teste
+X = df_traino.drop(columns=["Duration","Time"])
+y = df_traino['Duration']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Criando um modelo de regressão linear
-model = LinearRegression()
+modelo = LinearRegression()
+modelo.fit(X_train, y_train)
 
-# Treinando o modelo
-model.fit(X_train, y_train)
+def prever(body):
+  predito = modelo.predict(new_data_pipeline(body))
+  return predito[0]
 
-# Fazendo previsões no conjunto de teste
-y_pred = model.predict(X_test)
-
-# Avaliando o modelo
-mse = mean_squared_error(y_test, y_pred)
-rmse = np.sqrt(mse)
-r2 = r2_score(y_test, y_pred)
-
-def pepiline(body):
-    [528410.0, 0.0, 0.0, 1.0, 0.0]
-    times = []
-    a = time.split(":")
-    a2 = a[2].split(" ")
-    b = (int(a[0])*100000) + (int(a[1])*1000) + (int(a2[0])*10)
-    times.append(b)
-
-    data = [[
-        times[0],body["WhatsApp"], body["Instagram"], body["Gmail"], body["YouTube"]
-    ]]
-    
-    return data
-
-def predict(a):
-    y_pred = model.predict(a)
-    return y_pred
-
-
-
-
+def new_data_pipeline(data_dict):
+    # Crie um DataFrame a partir do dicionário
+    new_data = pd.DataFrame(data_dict)
+    hora = int(new_data['Time'][0].split(':')[0])  # Extrai a hora como um número inteiro
+    if 6 <= hora < 12:
+        new_data['_Manhã'] = 1
+    elif 12 <= hora < 18:
+        new_data['_Tarde'] = 1 
+    else:
+        new_data['_Noite'] = 1 
+    new_data = new_data.drop(columns=["Time"])
+    return new_data

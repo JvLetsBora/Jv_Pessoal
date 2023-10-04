@@ -54,7 +54,6 @@ function deletarNota(a){
 function add() {
     const body_add = document.getElementById('body_add');
     const titulo_add = document.getElementById('titulo_add');
-
     // URL para a qual você deseja fazer a solicitação POST
     let url = `${root}/add`;
 

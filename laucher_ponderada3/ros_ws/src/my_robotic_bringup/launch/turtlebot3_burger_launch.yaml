@@ -1,0 +1,6 @@
+# turtlebot3_burger_launch.yaml
+
+launch:
+   - turtlebot3_gazebo:
+        package: turtlebot3_gazebo
+        executable: turtlebot3_world.launch.py

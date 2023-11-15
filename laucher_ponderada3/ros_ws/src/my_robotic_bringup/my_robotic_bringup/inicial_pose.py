@@ -4,8 +4,26 @@ from nav2_simple_commander.robot_navigator import BasicNavigator
 from geometry_msgs.msg import PoseStamped
 from tf_transformations import quaternion_from_euler
 
+import subprocess
+
+# Exemplo de comando CMD no Windows
+comando = 'ls'  # Substitua 'dir' pelo seu comando desejado
+
+# Executar o comando
+resultado = subprocess.run(comando, shell=True, capture_output=True, text=True)
+
+# Exibir a saída do comando
+print("Saída do comando:")
+print(resultado.stdout)
+
+# Exibir a saída de erro (se houver)
+print("\nSaída de erro:")
+print(resultado.stderr)
+
+
+
 def inicio():
-    rclpy.init()
+    #rclpy.init()
     nav = BasicNavigator()
     q_x, q_y, q_z, q_w = quaternion_from_euler(0.0, 0.0, 0.0)
     initial_pose = PoseStamped()
@@ -21,5 +39,5 @@ def inicio():
 
     nav.setInitialPose(initial_pose)
     nav.waitUntilNav2Active()
-    rclpy.shutdown()
+    #rclpy.shutdown()
     return True

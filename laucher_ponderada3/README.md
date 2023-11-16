@@ -11,5 +11,5 @@ Certifique-se de ter o ROS2 instalado no seu sistema. Caso contrário, siga as i
 1. Clone este repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/meu-projeto-ros2.git
-   cd meu-projeto-ros2
+   git clone https://github.com/JvLetsBora/Jv_Pessoal.git
+   cd Jv_Pessoal/laucher_ponderada3/ros2_ws

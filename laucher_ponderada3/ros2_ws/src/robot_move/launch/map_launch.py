@@ -42,7 +42,7 @@ def generate_launch_description():
         on_exit=[
             LogInfo(msg=(' closed the turtlesim window')),
             ExecuteProcess(
-               cmd=["ros2", "run", "nav2_map_server", "map_saver_cli", "-f", "./resource/my_map"],
+               cmd=["ros2", "run", "nav2_map_server", "map_saver_cli", "-f", "./my_map"],
                output='screen'
             )
         ]

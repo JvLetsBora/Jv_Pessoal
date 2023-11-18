@@ -2,14 +2,13 @@ import re
 from chat_bot.actions import go_to, control
 
 intent_dict = {
-        r"^(Quero|[Pp]reciso|Estou|Onde encontro|procuro)\s+[a-zA-Z\s]+\s(.+)$":control,
+        r"\b^(Quero|[Pp]reciso|Estou|Onde encontro|procuro)\s+[a-zA-Z\s]+\s(.+)$":control,
         r"\b[Vv][áa](?:\spara)?\s?[oa]?\s(.+)":go_to,
         r"\b[Mm]e\sleve até\s?[oa]?\s(.+)":go_to
         }
 
 
 def solicite(valor):
-    error_log = []
     if valor == "sair":
         return False
     for key, function in intent_dict.items():
@@ -22,9 +21,14 @@ def solicite(valor):
             if function is go_to:
                 function((point[0]).lower())
                 break
+
             else:
                 function((point[0][1]).lower())
                 break
+        else:
+            if r"\b[Mm]e\sleve até\s?[oa]?\s(.+)" == key:
+                print("Comando não reconhecido")
+
     return True      
     
 

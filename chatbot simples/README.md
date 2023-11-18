@@ -84,7 +84,7 @@ Para a função control os possiveis resultados estão descritos no dicionário 
         "setor d": (5.0, 0.0, 0.0, 1.0, 7.0, 0.0)
     }
     
-Dessa forma, ao utilizar esse pacote, torna-se possível responder eficientemente às interações como "Onde fica o setor?" e "Preciso de um martelo."
+Dessa forma, ao utilizar esse pacote, torna-se possível responder eficientemente às interações como "Me leve até setor a" e "Preciso de um martelo."
 
 
 

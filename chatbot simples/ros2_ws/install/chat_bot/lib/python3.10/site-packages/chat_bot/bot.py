@@ -2,7 +2,7 @@ import re
 from chat_bot.actions import go_to, control
 
 intent_dict = {
-        r"\b^(Quero|[Pp]reciso|Estou|Onde encontro|procuro)\s+[a-zA-Z\s]+\s(.+)$":control,
+        r"\b^([Qq]uero|[Pp]reciso|[Ee]stou|[Oo]nde encontro|[Pp]rocuro)\s+[a-zA-Z\s]+\s(.+)$":control,
         r"\b[Vv][áa](?:\spara)?\s?[oa]?\s(.+)":go_to,
         r"\b[Mm]e\sleve até\s?[oa]?\s(.+)":go_to
         }

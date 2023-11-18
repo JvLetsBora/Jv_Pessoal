@@ -1,14 +1,15 @@
 import re
-import actions
+from chat_bot.actions import go_to, control
 
 intent_dict = {
-        r"^(Quero|[Pp]reciso|Estou|Onde encontro|procuro)\s+[a-zA-Z\s]+\s(.+)$":actions.control,
-        r"\b[Vv][áa](?:\spara)?\s?[oa]?\s(.+)":actions.go_to,
-        r"\b[Mm]e\sleve até\s?[oa]?\s(.+)":actions.go_to
+        r"^(Quero|[Pp]reciso|Estou|Onde encontro|procuro)\s+[a-zA-Z\s]+\s(.+)$":control,
+        r"\b[Vv][áa](?:\spara)?\s?[oa]?\s(.+)":go_to,
+        r"\b[Mm]e\sleve até\s?[oa]?\s(.+)":go_to
         }
 
 
 def solicite(valor):
+    error_log = []
     if valor == "sair":
         return False
     for key, function in intent_dict.items():
@@ -18,10 +19,12 @@ def solicite(valor):
         # print(match)
         if point:
             print("Encontrei uma intenção! Computando...")
-            if function is actions.go_to:
+            if function is go_to:
                 function((point[0]).lower())
+                break
             else:
                 function((point[0][1]).lower())
+                break
     return True      
     
 

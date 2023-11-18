@@ -1,24 +1,20 @@
-# Projeto ROS2 para mapeamento e navegação com NVIZ
+# Projeto ROS2 para Mapeamento e Navegação com NVIZ
 
-Este é um projeto ROS2 que inclui dois conjuntos de ferramentas, uma para mapeamento utilizando RVIZ e Turtlebot3 (Launcher de Mapeamento) e outro para navegação teste (Launcher de Navegação).
+Este é um projeto ROS2 que inclui dois conjuntos de ferramentas, um para mapeamento utilizando RVIZ e Turtlebot3 (Launcher de Mapeamento) e outro para navegação de teste (Launcher de Navegação).
 
 ## Pré-requisitos
 
-Certifique-se de ter o ROS2 e NVIZ instalado e configurado corretamente no seu sistema. Caso contrário, siga as instruções de instalação nos links a seguir: [ROS 2 Installation](https://rmnicola.github.io/m8-ec-encontros/sprint1/encontro1/setup-ros)
+Certifique-se de ter o ROS2 e NVIZ instalados e configurados corretamente no seu sistema. Caso contrário, siga as instruções de instalação nos links a seguir:
+- [ROS 2 Installation](https://rmnicola.github.io/m8-ec-encontros/sprint1/encontro1/setup-ros)
+- [NVIZ Installation](https://rmnicola.github.io/m8-ec-encontros/sprint2/encontro4/nav2)
 
-[NVIZ](https://rmnicola.github.io/m8-ec-encontros/sprint2/encontro4/nav2)
-
-
-## Instalação
+## Passos para Inicialização do Projeto:
 
 1. Clone este repositório:
 
    ```bash
    git clone https://github.com/JvLetsBora/Jv_Pessoal.git
    cd Jv_Pessoal/laucher_ponderada3/ros2_ws
-
-
-
 
 
 2. Construa o projeto:
@@ -32,14 +28,22 @@ Certifique-se de ter o ROS2 e NVIZ instalado e configurado corretamente no seu s
     ```bash
     source install/setup.bash
 
+Agora seu sistema já reconhece os comandos e pacotes dessa aplicação.
+
 ## Uso
+
+
 ### Launcher de Mapeamento
+Este launcher abrirá três ferramentas na sua tela, uma para mapeamento, outra para controle do robô e o ambiente de simulação Gazebo.
+
 1. Para inicializar o mapeamento e geração do mapa.
     ```bash
     cd src/my_package/launch
     ros2 launch map_launch.py
 
 ### Launcher de Navegação
+Após a execução desse launch, o Gazebo e o NVIZ serão inicializados, e um terceiro terminal executará um comando com coordenadas para testar seu NVIZ. Se tudo estiver instalado e configurado corretamente, o robô começará a se mover.
+
 1. Para inicializar a navegação teste.
     ```bash
     cd src/my_package/launch

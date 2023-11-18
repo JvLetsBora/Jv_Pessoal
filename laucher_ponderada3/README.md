@@ -34,13 +34,13 @@ Certifique-se de ter o ROS2 e NVIZ instalado e configurado corretamente no seu s
 
 ## Uso
 ### Launcher de Mapeamento
-Para inicializar o mapeamento e geração do mapa.
+1. Para inicializar o mapeamento e geração do mapa.
     ```bash
     cd src/my_package/launch
     ros2 launch map_launch.py
 
 ### Launcher de Navegação
-Para inicializar a navegação teste.
+1. Para inicializar a navegação teste.
     ```bash
     cd src/my_package/launch
     ros2 launch map_launch.py

@@ -31,14 +31,16 @@ Certifique-se de ter o ROS2 e NVIZ instalados e configurados corretamente no seu
 Agora seu sistema já reconhece os comandos e pacotes dessa aplicação.
 
 ## Uso
-
+Para o uso dessas ferramentas certifique-se de estar no diretório correto:
+1. Entrar no diretório de laçamentos.
+    ```bash
+    cd src/my_package/launch
 
 ### Launcher de Mapeamento
 Este launcher abrirá três ferramentas na sua tela, uma para mapeamento, outra para controle do robô e o ambiente de simulação Gazebo.
 
 1. Para inicializar o mapeamento e geração do mapa.
     ```bash
-    cd src/my_package/launch
     ros2 launch map_launch.py
 
 ### Launcher de Navegação
@@ -46,5 +48,4 @@ Após a execução desse launch, o Gazebo e o NVIZ serão inicializados, e um te
 
 1. Para inicializar a navegação teste.
     ```bash
-    cd src/my_package/launch
     ros2 launch map_launch.py

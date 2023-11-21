@@ -49,6 +49,7 @@ Agora ele está apto para receber as instruções.
 ## Construção
 
 ### 1.  Dicionário de interação
+1. intenções
     ```python
     intent_dict = {
         r"\b^([Qq]uero|[Pp]reciso|[Ee]stou|[Oo]nde encontro|[Pp]rocuro)\s+[a-zA-Z\s]+\s(.+)$":control,

@@ -2,7 +2,9 @@ import re
 import actions
 
 intent_dict = {
-        r"^(Quero|Preciso|Estou|Onde encontro|procuro)\s+[a-zA-Z\s]+\s(.+)$":actions.control
+        r"^(Quero|[Pp]reciso|Estou|Onde encontro|procuro)\s+[a-zA-Z\s]+\s(.+)$":actions.control,
+        r"\b[Vv][áa](?:\spara)?\s?[oa]?\s(.+)":actions.go_to,
+        r"\b[Mm]e\sleve até\s?[oa]?\s(.+)":actions.go_to
         }
 
 
@@ -12,12 +14,14 @@ def solicite(valor):
     for key, function in intent_dict.items():
         pattern = re.compile(key)
         point = pattern.findall(valor)
-        
         # match = re.match(pattern, valor)
         # print(match)
         if point:
             print("Encontrei uma intenção! Computando...")
-            function((point[0][1]).lower())
+            if function is actions.go_to:
+                function((point[0]).lower())
+            else:
+                function((point[0][1]).lower())
     return True      
     
 

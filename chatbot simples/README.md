@@ -49,7 +49,7 @@ Agora ele está apto para receber as instruções.
 ## Construção
 
 ### 1.  Dicionários internos
-Das possibilidades de inteções as que se refere a soliciar uma ferramenta tem como resultado a função 'control', agora as intenções de achar um setor levam para a função 'go_to'.
+Considerando as diferentes interações possíveis, quando o usuário expressa a intenção de solicitar uma ferramenta, o sistema responde acionando a função 'control'. Já no caso das intenções relacionadas a encontrar um setor específico, a ação correspondente é encaminhada para a função 'go_to'. 
 
 1. intenções
     ```python
@@ -83,3 +83,10 @@ Para a função control os possiveis resultados estão descritos no dicionário 
         "setor c": (0.0, 0.2, 0.0, 1.0, 0.0, 0.0),
         "setor d": (5.0, 0.0, 0.0, 1.0, 7.0, 0.0)
     }
+    
+Dessa forma, ao utilizar esse pacote, torna-se possível responder eficientemente às interações como "Onde fica o setor?" e "Preciso de um martelo."
+
+
+
+
+

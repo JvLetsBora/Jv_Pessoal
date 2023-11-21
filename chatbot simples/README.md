@@ -48,8 +48,7 @@ Agora ele está apto para receber as instruções.
 
 ## Construção
 
-### Dicionário de interação
-1. Inicialize o chat bot.
+### 1.  Dicionário de interação
     ```python
     intent_dict = {
         r"\b^([Qq]uero|[Pp]reciso|[Ee]stou|[Oo]nde encontro|[Pp]rocuro)\s+[a-zA-Z\s]+\s(.+)$":control,

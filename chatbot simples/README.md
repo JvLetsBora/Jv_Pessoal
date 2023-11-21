@@ -48,7 +48,9 @@ Agora ele está apto para receber as instruções.
 
 ## Construção
 
-### 1.  Dicionário de interação
+### 1.  Dicionários internos
+Das possibilidades de inteções as que se refere a soliciar uma ferramenta tem como resultado a função 'control', agora as intenções de achar um setor levam para a função 'go_to'.
+
 1. intenções
     ```python
     intent_dict = {
@@ -56,3 +58,27 @@ Agora ele está apto para receber as instruções.
         r"\b[Vv][áa](?:\spara)?\s?[oa]?\s(.+)":go_to,
         r"\b[Mm]e\sleve até\s?[oa]?\s(.+)":go_to
         }
+
+
+Para a função control os possiveis resultados estão descritos no dicionário 'point_dict', enquanto para função go_to estão descritos no dicionário 'area_dict':
+2. ações
+    ```python
+    point_dict = {
+        r"martelo": ((0.0, 2.0, 0.0, 1.0, 0.0, 0.0),"Setor A"),
+        r"marreta": ((60.0, 0.0, 0.0, 1.0, 0.0, 0.0),"Setor B"),
+        r"prego": ((0.0, 0.2, 0.0, 1.0, 0.0, 0.0),"Setor A"),
+        r"porca": ((5.0, 0.0, 0.0, 1.0, 7.0, 0.0),"Setor D"),
+        r"chave de Fenda": ((0.0, 0.0, 0.0, 1.0, 0.0, 0.0),"Setor C"),
+        r"alicate": ((0.0, 0.2, 0.0, 1.0, 0.0, 0.0),"Setor A"),
+        r"chave Inglesa": ((6.0, 2.0, 0.0, 1.0, 0.0, 0.0),"Setor C"),
+        r"parafuso": ((0.0, 0.0, 0.0, 1.0, 0.0, 7.0),"Setor A"),
+        r"serra": ((6.0, 0.2, 0.0, 1.0, 0.0, 0.0),"Setor B"),
+        r"lixa": ((5.0, 0.4, 0.0, 1.0, 0.0, 7.0),"Setor D"),
+    }
+
+    area_dict = {
+        "setor a": (0.0, 2.0, 0.0, 1.0, 0.0, 0.0),
+        "setor b": (60.0, 0.0, 0.0, 1.0, 0.0, 0.0),
+        "setor c": (0.0, 0.2, 0.0, 1.0, 0.0, 0.0),
+        "setor d": (5.0, 0.0, 0.0, 1.0, 7.0, 0.0)
+    }

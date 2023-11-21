@@ -1,16 +1,3 @@
-point_dict = {
-    r"martelo": ((0.0, 2.0, 0.0, 1.0, 0.0, 0.0),"Setor A"),
-    r"marreta": ((60.0, 0.0, 0.0, 1.0, 0.0, 0.0),"Setor B"),
-    r"prego": ((0.0, 0.2, 0.0, 1.0, 0.0, 0.0),"Setor A"),
-    r"porca": ((5.0, 0.0, 0.0, 1.0, 7.0, 0.0),"Setor D"),
-    r"chave de Fenda": ((0.0, 0.0, 0.0, 1.0, 0.0, 0.0),"Setor C"),
-    r"alicate": ((0.0, 0.2, 0.0, 1.0, 0.0, 0.0),"Setor A"),
-    r"chave Inglesa": ((6.0, 2.0, 0.0, 1.0, 0.0, 0.0),"Setor C"),
-    r"parafuso": ((0.0, 0.0, 0.0, 1.0, 0.0, 7.0),"Setor A"),
-    r"serra": ((6.0, 0.2, 0.0, 1.0, 0.0, 0.0),"Setor B"),
-    r"lixa": ((5.0, 0.4, 0.0, 1.0, 0.0, 7.0),"Setor D"),
-}
-
 area_dict = {
     "setor a": (0.0, 2.0, 0.0, 1.0, 0.0, 0.0),
      "setor b": (60.0, 0.0, 0.0, 1.0, 0.0, 0.0),
@@ -19,6 +6,18 @@ area_dict = {
 }
 
 
+point_dict = {
+    r"martelo": (area_dict['setor a'],"Setor A"),
+    r"marreta": (area_dict['setor b'],"Setor B"),
+    r"prego": (area_dict["setor a"],"Setor A"),
+    r"porca": (area_dict["setor d"],"Setor D"),
+    r"chave de Fenda": (area_dict["setor c"],"Setor C"),
+    r"alicate": (area_dict["setor a"],"Setor A"),
+    r"chave Inglesa": (area_dict["setor c"],"Setor C"),
+    r"parafuso": (area_dict["setor a"],"Setor A"),
+    r"serra": (area_dict['setor b'],"Setor B"),
+    r"lixa": (area_dict["setor d"],"Setor D"),
+}
 
 
 

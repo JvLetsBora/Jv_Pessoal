@@ -75,7 +75,6 @@ Para a função control os possiveis resultados estão descritos no dicionário 
         r"serra": (area_dict['setor b'],"Setor B"),
         r"lixa": (area_dict["setor d"],"Setor D"),
     }
-
     area_dict = {
         "setor a": (0.0, 2.0, 0.0, 1.0, 0.0, 0.0),
         "setor b": (60.0, 0.0, 0.0, 1.0, 0.0, 0.0),

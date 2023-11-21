@@ -61,7 +61,7 @@ Das possibilidades de inteções as que se refere a soliciar uma ferramenta tem 
 
 
 Para a função control os possiveis resultados estão descritos no dicionário 'point_dict', enquanto para função go_to estão descritos no dicionário 'area_dict':
-2. ações
+1. ações
     ```python
     point_dict = {
         r"martelo": (area_dict['setor a'],"Setor A"),
@@ -75,6 +75,8 @@ Para a função control os possiveis resultados estão descritos no dicionário 
         r"serra": (area_dict['setor b'],"Setor B"),
         r"lixa": (area_dict["setor d"],"Setor D"),
     }
+2. ações
+    ```python
     area_dict = {
         "setor a": (0.0, 2.0, 0.0, 1.0, 0.0, 0.0),
         "setor b": (60.0, 0.0, 0.0, 1.0, 0.0, 0.0),

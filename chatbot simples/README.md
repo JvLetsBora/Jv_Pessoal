@@ -1,6 +1,6 @@
 # Chat bot 
 
-Este é um projeto ROS2 que inclui pacote para robô de serviço.
+Este é um projeto ROS2 que inclui um pacote para robô de serviço.
 
 ## Pré-requisitos
 
@@ -41,3 +41,18 @@ Esse chat bot reconhe três tipos de comando:
 1. Inicialize o chat bot.
     ```bash
     ros2 run chat_bot bot
+
+Agora ele está apto para receber as instruções.
+
+
+
+## Construção
+
+### Dicionário de interação
+1. Inicialize o chat bot.
+    ```python
+    intent_dict = {
+        r"\b^([Qq]uero|[Pp]reciso|[Ee]stou|[Oo]nde encontro|[Pp]rocuro)\s+[a-zA-Z\s]+\s(.+)$":control,
+        r"\b[Vv][áa](?:\spara)?\s?[oa]?\s(.+)":go_to,
+        r"\b[Mm]e\sleve até\s?[oa]?\s(.+)":go_to
+        }

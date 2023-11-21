@@ -1,6 +1,6 @@
 # Chat bot 
 
-Este é um projeto ROS2 que inclui pacote de robô de serviço.
+Este é um projeto ROS2 que inclui pacote para robô de serviço.
 
 ## Pré-requisitos
 

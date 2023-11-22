@@ -1,5 +1,23 @@
 import re
-from chat_bot.actions import go_to, control
+import dotenv
+from actions import go_to, control
+import os
+
+# dotenv_file = dotenv.find_dotenv()
+# dotenv.load_dotenv(dotenv_file)
+
+# print(os.environ["key"])  # outputs "value"
+# os.environ["key"] = "newvalue"
+# print(os.environ['key'])  # outputs 'newvalue'
+
+# # Write changes to .env file.
+# dotenv.set_key(dotenv_file, "key", os.environ["key"])
+
+
+
+
+
+
 
 intent_dict = {
         r"\b^([Qq]uero|[Pp]reciso|[Ee]stou|[Oo]nde encontro|[Pp]rocuro)\s+[a-zA-Z\s]+\s(.+)$":control,

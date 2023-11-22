@@ -13,7 +13,7 @@ Certifique-se de ter o ROS2 instalados e configurados corretamente no seu sistem
 
    ```bash
    git clone https://github.com/JvLetsBora/Jv_Pessoal.git
-   cd Jv_Pessoal/'chatbot simples'/ros2_ws
+   cd Jv_Pessoal/'chatbot simples'/ros2_ws 
 
 
 2. Construa o projeto:
@@ -84,7 +84,7 @@ Para a função control os possiveis resultados estão descritos no dicionário 
         "setor d": (5.0, 0.0, 0.0, 1.0, 7.0, 0.0)
     }
     
-Dessa forma, ao utilizar esse pacote, torna-se possível responder eficientemente às interações como "Me leve até setor a" e "Preciso de um martelo."
+Dessa forma, ao utilizar esse pacote, torna-se possível responder eficientemente às interações como "Onde fica o setor?" e "Preciso de um martelo."
 
 
 

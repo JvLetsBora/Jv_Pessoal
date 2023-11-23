@@ -1,0 +1,3 @@
+[console_scripts]
+bot = chat_bot.bot:main
+

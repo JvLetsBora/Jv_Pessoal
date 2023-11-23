@@ -60,8 +60,8 @@ def main():
     completion = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[
-        {"role": "system", "content": "You are a poetic assistant, skilled in explaining complex programming concepts with creative flair."},
-        {"role": "user", "content": "Compose a poem that explains the concept of recursion in programming."}
+        {"role": "system", "content": "Considere que você é um técnico de almoxarifado especializado em peças mecânicas e funcionamento fabril"},
+        {"role": "user", "content": "Preciso que para cada problema relacionado ao mundo fabril você me forneça uma solução de que peça estou precisando para solucionar de forma breve, curta e em todos as suas respostas a palavra 'essa peça' deve estar antes da peça que você me recomendar. A equipe de operação de um forno industrial relata variações significativas nas temperaturas durante os ciclos de produção. Em alguns casos, o forno atinge temperaturas superiores ou inferiores às configurações programadas, resultando em produtos finais com características indesejadas. Não há indícios visuais de danos externos no sistema de aquecimento."}
     ]
     )
 

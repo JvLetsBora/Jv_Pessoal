@@ -71,6 +71,7 @@ def main():
 if __name__ == "__main__":
     main()
 
+# python OneDrive\Documentos\GitHub\Jv_Pessoal\chatbot_LLM\chat_bot\bot.py
 
 
 

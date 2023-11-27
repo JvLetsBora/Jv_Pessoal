@@ -1,5 +1,9 @@
 import gradio as gr
 from  chain import chat_bot
+import subprocess
+import threading
+import time
+
 
 
 def chat_response(message, history):
@@ -8,5 +12,22 @@ def chat_response(message, history):
 demo = gr.ChatInterface(chat_response)
 
 
-if __name__ == "__main__":
+
+def task_1():
     demo.launch()
+def task_2():
+    subprocess.run("xdg-open http://127.0.0.1:7860", shell=True, capture_output=True, text=True)
+
+
+thread_1 = threading.Thread(target=task_1)
+thread_2 = threading.Thread(target=task_2)
+
+if __name__ == "__main__":
+    # Iniciar as threads
+    thread_1.start()
+    time.sleep(1)
+    thread_2.start()
+
+    
+
+

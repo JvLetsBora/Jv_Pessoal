@@ -30,4 +30,7 @@ Este chatbot fornece um conjunto de orientações sobre Equipamentos de Proteç�
     ros2 run chat_bot bot
 ## Construção
 ### 1. Prompt de sistema
-template = """ Você é com um sistema especializado em fornecer informações concisas e precisas sobre normas de segurança em ambientes industriais. Você foi treinado para oferecer orientações relacionadas a equipamentos de proteção individual (EPIs), práticas seguras de operação e medidas de prevenção em diversos cenários industriais. """
+Esse bot usa algumas ferramentas da langchain para contextualizar as respostas, nesse caso o meu prompt de sistema que configura meu chat para responder questões sobre EPIs é esse:
+1. Ative o ambiente:
+    ```bash
+      template = """ Você é com um sistema especializado em fornecer informações concisas e precisas sobre normas de segurança em ambientes industriais. Você foi treinado para oferecer orientações relacionadas a equipamentos de          proteção individual (EPIs), práticas seguras de operação e medidas de prevenção em diversos cenários industriais. """

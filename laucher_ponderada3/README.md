@@ -49,3 +49,7 @@ Após a execução desse launch, o Gazebo e o NVIZ serão inicializados, e um te
 1. Para inicializar a navegação teste.
     ```bash
     ros2 launch map_launch.py
+
+
+Para visualizar o comportamento desejado, recomendamos assistir ao vídeo abaixo que demonstra o funcionamento do mapeamento::
+[Assista ao vídeo de demonstração do mapeamento aqui](https://drive.google.com/file/d/17IQbyCZW2-DupMsvM5Pft-qFq78kt6Y1/view?usp=sharing)

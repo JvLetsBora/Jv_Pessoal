@@ -22,12 +22,16 @@ Certifique-se de que o ROS2, a biblioteca OpenAI, gradio e o Langchain estejam i
     source install/setup.bash
 Agora seu sistema já reconhece os comandos e pacotes dessa aplicação.
 ## Uso
-Para o uso dessas ferramenta siga as etapas abaixo:
+Para o uso dessa ferramenta siga as etapas abaixo:
 ### Chat bot
 Este chatbot fornece um conjunto de orientações sobre Equipamentos de Proteção Individual (EPIs) utilizados em diferentes áreas de atuação. Após a inicialização, abriram-se duas abas em seu computador: uma contendo o terminal de execução desse nó e uma guia do seu navegador. Após abertas, é só fazer perguntas ao chatbot.
 1. Inicialize o chat bot.
     ```bash
     ros2 run chat_bot bot
+
+Para visualizar o comportamento esperado, recomendamo assistir ao vídeo abaixo que demonstra o funcionamento da ferramenta:
+[Assista ao vídeo de demonstração da ferramenta aqui](https://python.langchain.com/docs/get_started/installation)
+
 ## Construção
 ### 1. Prompt de sistema
 Esse bot usa algumas ferramentas da langchain para contextualizar as respostas, nesse caso o meu prompt de sistema que configura meu chat para responder questões sobre EPIs é esse:

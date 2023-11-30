@@ -11,6 +11,8 @@ from langchain.schema import BaseOutputParser
 
 dotenv_file = dotenv.find_dotenv()
 dotenv.load_dotenv(dotenv_file)
+
+load_dotenv()
 llm = ChatOpenAI(openai_api_key=os.environ['OPENAI_API_KEY'])
 chat_model = ChatOpenAI()
 

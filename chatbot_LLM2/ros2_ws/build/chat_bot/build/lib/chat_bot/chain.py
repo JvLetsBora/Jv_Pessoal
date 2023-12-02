@@ -1,33 +1,63 @@
-from langchain.llms import OpenAI
-from langchain.chat_models import ChatOpenAI
-from langchain.prompts.chat import ChatPromptTemplate
-import os
-import dotenv
-from typing import List
-from langchain.schema import BaseOutputParser
+from langchain.llms import Ollama
+from langchain.prompts import ChatPromptTemplate
+import asyncio
+from langchain.schema.runnable import  RunnablePassthrough
+from langchain.document_loaders import DirectoryLoader, TextLoader
+from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
+from langchain.text_splitter import CharacterTextSplitter
+from langchain.vectorstores import Chroma
 
 
-openai_api_key="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"
-
-dotenv_file = dotenv.find_dotenv()
-dotenv.load_dotenv(dotenv_file)
-llm = ChatOpenAI()
-chat_model = ChatOpenAI()
-
-class CommaSeparatedListOutputParser(BaseOutputParser[List[str]]):
 
 
-    def parse(self, text: str) -> List[str]:
-        return text
+# load the document and split it into chunks
+loader =  DirectoryLoader('../', 
+                                glob='**/contexto.txt',
+                                loader_cls=TextLoader,
+                                show_progress=True
+                            )
+documents = loader.load()
 
-template = """ Você é com um sistema especializado em fornecer informações concisas e precisas sobre normas de segurança em ambientes industriais. Você foi treinado para oferecer orientações relacionadas a equipamentos de proteção individual (EPIs), práticas seguras de operação e medidas de prevenção em diversos cenários industriais. """
-human_template = "{text}"
+# split it into chunks
+text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+docs = text_splitter.split_documents(documents)
 
-chat_prompt = ChatPromptTemplate.from_messages([
-    ("system", template),
-    ("human", human_template),
-])
-chain = chat_prompt | ChatOpenAI() | CommaSeparatedListOutputParser()
+# create the open-source embedding function
+embedding_function = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
 
-def chat_bot(msg):
-    return chain.invoke({"text": f"{msg}"})
+# load it into Chroma
+vectorstore = Chroma.from_documents(docs, embedding_function)
+
+retriever = vectorstore.as_retriever()
+
+template = """Answer the question based only on the following context:
+{context}
+
+Question: {question}
+"""
+prompt = ChatPromptTemplate.from_template(template)
+
+model = Ollama(model="dolphin2.2-mistral")
+
+chain = (
+    {"context": retriever, "question": RunnablePassthrough()}
+    | prompt
+    | model
+)
+
+
+async def chat_bot(msg):
+    return str(chain.invoke(msg))
+
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

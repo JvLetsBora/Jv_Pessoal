@@ -1,33 +1,63 @@
-from langchain.llms import OpenAI
-from langchain.chat_models import ChatOpenAI
-from langchain.prompts.chat import ChatPromptTemplate
-import os
-import dotenv
-from typing import List
-from langchain.schema import BaseOutputParser
+from langchain.llms import Ollama
+from langchain.prompts import ChatPromptTemplate
+import asyncio
+from langchain.schema.runnable import  RunnablePassthrough
+from langchain.document_loaders import DirectoryLoader, TextLoader
+from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
+from langchain.text_splitter import CharacterTextSplitter
+from langchain.vectorstores import Chroma
 
 
 
 
-dotenv_file = dotenv.find_dotenv()
-dotenv.load_dotenv(dotenv_file)
-llm = ChatOpenAI(openai_api_key=os.environ['OPENAI_API_KEY'])
-chat_model = ChatOpenAI()
+# load the document and split it into chunks
+loader =  DirectoryLoader('../', 
+                                glob='**/contexto.txt',
+                                loader_cls=TextLoader,
+                                show_progress=True
+                            )
+documents = loader.load()
 
-class CommaSeparatedListOutputParser(BaseOutputParser[List[str]]):
+# split it into chunks
+text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+docs = text_splitter.split_documents(documents)
+
+# create the open-source embedding function
+embedding_function = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+
+# load it into Chroma
+vectorstore = Chroma.from_documents(docs, embedding_function)
+
+retriever = vectorstore.as_retriever()
+
+template = """Answer the question based only on the following context:
+{context}
+
+Question: {question}
+"""
+prompt = ChatPromptTemplate.from_template(template)
+
+model = Ollama(model="dolphin2.2-mistral")
+
+chain = (
+    {"context": retriever, "question": RunnablePassthrough()}
+    | prompt
+    | model
+)
 
 
-    def parse(self, text: str) -> List[str]:
-        return text
+async def chat_bot(msg):
+    return str(chain.invoke(msg))
 
-template = """ Você é com um sistema especializado em fornecer informações concisas e precisas sobre normas de segurança em ambientes industriais. Você foi treinado para oferecer orientações relacionadas a equipamentos de proteção individual (EPIs), práticas seguras de operação e medidas de prevenção em diversos cenários industriais. """
-human_template = "{text}"
-
-chat_prompt = ChatPromptTemplate.from_messages([
-    ("system", template),
-    ("human", human_template),
-])
-chain = chat_prompt | ChatOpenAI() | CommaSeparatedListOutputParser()
-
-def chat_bot(msg):
-    return chain.invoke({"text": f"{msg}"})
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

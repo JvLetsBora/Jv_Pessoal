@@ -25,7 +25,11 @@ Agora seu sistema já reconhece os comandos e pacotes dessa aplicação.
 Para o uso dessa ferramenta siga as etapas abaixo:
 ### Chat bot
 Este chatbot fornece um conjunto de orientações sobre Equipamentos de Proteção Individual (EPIs) utilizados em diferentes áreas de atuação. Após a inicialização, abriram-se duas abas em seu computador: uma contendo o terminal de execução desse nó e uma guia do seu navegador. Após abertas, é só fazer perguntas ao chatbot.
-1. Inicialize o chat bot.
+1. Inicialize o ollama server.
+    ```bash
+    ollama serve
+
+2. Inicialize o chat bot.
     ```bash
     ros2 run chat_bot bot
 

@@ -30,7 +30,7 @@ Este chatbot fornece um conjunto de orientações sobre Equipamentos de Proteç�
     ros2 run chat_bot bot
 
 Para visualizar o comportamento esperado, recomendamo assistir ao vídeo abaixo que demonstra o funcionamento da ferramenta:
-[Assista ao vídeo de demonstração da ferramenta aqui](https://clipchamp.com/watch/jFhgqINTVgm)
+[Assista ao vídeo de demonstração da ferramenta aqui](https://clipchamp.com/watch/FOVDab1psLs)
 
 ## Construção
 ### 1. Prompt de sistema

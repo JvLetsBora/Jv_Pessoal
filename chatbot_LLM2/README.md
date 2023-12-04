@@ -21,21 +21,32 @@ Agora seu sistema já reconhece os comandos e pacotes dessa aplicação.
 ## Uso
 Para o uso dessa ferramenta siga as etapas abaixo:
 ### Chat bot
-Este chatbot fornece um conjunto de orientações sobre o contexto fornecido no diretorio \chatbot_LLM2\ros2_ws\src\chat_bot\chat_bot\contexto.txt. Após a inicialização, abrirá um terminal contendo um link, após abrir esse link em seu navegador o sistema já estará apto a receber suas perguntas.
+Este chatbot fornece um conjunto de orientações com base no contexto fornecido no diretório 
+\chatbot_LLM2\ros2_ws\src\chat_bot\chat_bot\contexto.txt.
+
+Para utilizar o chatbot, siga estas instruções:
 1. Inicialize o ollama server.
     ```bash
     ollama serve
 
-2. Inicialize o chat bot.
+2. Em outro terminal para iniciar o chat bot rode:
     ```bash
     ros2 run chat_bot bot
+
+Lembre-se de consultar o arquivo contexto.txt para obter informações sobre o contexto atual do chatbot.
 
 Para visualizar o comportamento esperado, recomendamo assistir ao vídeo abaixo que demonstra o funcionamento da ferramenta:
 [Assista ao vídeo de demonstração da ferramenta aqui](https://clipchamp.com/watch/FOVDab1psLs)
 
 ## Construção
-### 1. Prompt de sistema
-Esse bot usa algumas ferramentas da langchain para contextualizar as respostas, nesse caso o meu prompt de sistema que configura meu chat para responder questões sobre EPIs é esse:
-1. template:
+
+### 1. Configuração do Contexto
+
+Este bot utiliza ferramentas da LangChain para contextualizar as respostas. Para compreender melhor o seu funcionamento, siga os passos abaixo:
+
+**1.1. Acesse o Módulo chain.py:**
+
+1. Abra o terminal e navegue até o diretório `chat_bot`:
     ```bash
-      template = """ Você é com um sistema especializado em fornecer informações concisas e precisas sobre normas de segurança em ambientes industriais. Você foi treinado para oferecer orientações relacionadas a equipamentos de          proteção individual (EPIs), práticas seguras de operação e medidas de prevenção em diversos cenários industriais. """
+    cd src/chat_bot/chat_bot/
+

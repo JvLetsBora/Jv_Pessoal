@@ -3,7 +3,7 @@ Este é um projeto ROS2 que inclui um pacote para robô de serviço com integra�
 ## Pré-requisitos
 Certifique-se de que o ROS2, o Ollama, gradio e o Langchain estejam instalados e configurados corretamente em seu sistema. Caso contrário, siga as instruções de instalação nos seguintes links:
 - [ROS 2 instalação](https://rmnicola.github.io/m8-ec-encontros/sprint1/encontro1/setup-ros)
-- [Ollama](https://ollama.ai)
+- [Ollama instalação](https://ollama.ai)
 - [Gradio instalação](https://www.gradio.app/guides/quickstart)
 - [Langchain instalação](https://python.langchain.com/docs/get_started/installation)
 ## Passos para Inicialização do Projeto:
@@ -49,4 +49,10 @@ Este bot utiliza ferramentas da LangChain para contextualizar as respostas. Para
 1. Abra o terminal e navegue até o diretório `chat_bot`:
     ```bash
     cd src/chat_bot/chat_bot/
+
+2. Acesse o Módulo chain.py:
+    ```bash
+    # Substitua 'seu_editor_preferido' pelo nome do seu editor de texto ou IDE
+    seu_editor_preferido chain.py
+
 

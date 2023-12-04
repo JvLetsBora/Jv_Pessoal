@@ -1,30 +1,27 @@
-# Chat bot
-Este é um projeto ROS2 que inclui um pacote para robô de serviço.
+# Chat bot com RAG
+Este é um projeto ROS2 que inclui um pacote para robô de serviço com integração de contexto.
 ## Pré-requisitos
-Certifique-se de que o ROS2, a biblioteca OpenAI, gradio e o Langchain estejam instalados e configurados corretamente em seu sistema. Caso contrário, siga as instruções de instalação nos seguintes links:
+Certifique-se de que o ROS2, o Ollama, gradio e o Langchain estejam instalados e configurados corretamente em seu sistema. Caso contrário, siga as instruções de instalação nos seguintes links:
 - [ROS 2 instalação](https://rmnicola.github.io/m8-ec-encontros/sprint1/encontro1/setup-ros)
-- [OpenAI instalação](https://platform.openai.com/docs/quickstart?context=python)
+- [Ollama](https://ollama.ai)
 - [Gradio instalação](https://www.gradio.app/guides/quickstart)
 - [Langchain instalação](https://python.langchain.com/docs/get_started/installation)
 ## Passos para Inicialização do Projeto:
 1. Clone este repositório:
    ```bash
    git clone https://github.com/JvLetsBora/Jv_Pessoal.git
-   cd Jv_Pessoal/'chatbot_LLM'/ros2_ws
-2. Exporte como variável de ambiente sua chave OpenAI:
-    ```bash
-    export OPENAI_API_KEY='< sua chave da OpenAI >'
-3. Construa o projeto:
+   cd Jv_Pessoal/'chatbot_LLM2'/ros2_ws
+2. Construa o projeto:
     ```bash
     colcon build
-4. Ative o ambiente:
+3. Ative o ambiente:
     ```bash
     source install/setup.bash
 Agora seu sistema já reconhece os comandos e pacotes dessa aplicação.
 ## Uso
 Para o uso dessa ferramenta siga as etapas abaixo:
 ### Chat bot
-Este chatbot fornece um conjunto de orientações sobre Equipamentos de Proteção Individual (EPIs) utilizados em diferentes áreas de atuação. Após a inicialização, abriram-se duas abas em seu computador: uma contendo o terminal de execução desse nó e uma guia do seu navegador. Após abertas, é só fazer perguntas ao chatbot.
+Este chatbot fornece um conjunto de orientações sobre o contexto fornecido no diretorio \chatbot_LLM2\ros2_ws\src\chat_bot\chat_bot\contexto.txt. Após a inicialização, abrirá um terminal contendo um link, após abrir esse link em seu navegador o sistema já estará apto a receber suas perguntas.
 1. Inicialize o ollama server.
     ```bash
     ollama serve

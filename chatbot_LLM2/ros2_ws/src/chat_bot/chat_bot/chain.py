@@ -8,10 +8,8 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import Chroma
 
 
-
-
 # load the document and split it into chunks
-loader =  DirectoryLoader('../', 
+loader =  DirectoryLoader('../',
                                 glob='**/contexto.txt',
                                 loader_cls=TextLoader,
                                 show_progress=True
@@ -48,16 +46,3 @@ chain = (
 
 async def chat_bot(msg):
     return str(chain.invoke(msg))
-
-    
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 

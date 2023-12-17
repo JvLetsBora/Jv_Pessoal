@@ -5,3 +5,6 @@ Repositório criado para o desafio prático número 8, que pode ser visualizado 
 ## Tradutor de Áudio
 
 Os arquivos deste repositório destinam-se à formulação de uma aplicação de tradução que suporta tanto entradas de áudio quanto texto.
+
+
+(Video da demostração)[https://clipchamp.com/watch/8hBKB2lLtcN]

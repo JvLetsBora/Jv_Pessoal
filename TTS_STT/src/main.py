@@ -3,7 +3,6 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 from audio import Recording
-#import tts
 
 # Carrega as variáveis de ambiente do arquivo .env
 load_dotenv()
@@ -13,6 +12,7 @@ api_key = os.getenv('OPENAI_API_KEY')
 client = OpenAI(
   api_key=api_key
 )
+
 
 audi_file = Recording()
 
@@ -30,7 +30,7 @@ text = transcript
 completion = client.chat.completions.create(
   model="gpt-3.5-turbo",
   messages=[
-    {"role": "system", "content": f"Will you help me translate all the text after the special character '/' as an expert translator in the {language} language. Only return the translated text to me. Return only the translated text."},
+    {"role": "system", "content": f"Will you help me translate all the text after the special character '/' to the {language} language as an expert translator in it. Only return the translated text."},
     {"role": "user", "content": f"/ {text}"}
   ]
 )

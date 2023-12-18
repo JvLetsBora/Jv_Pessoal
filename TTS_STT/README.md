@@ -9,7 +9,7 @@ Os arquivos deste repositório destinam-se à formulação de uma aplicação de
 ### Pré-requisitos
 Certifique-se de ter um ambiente OpenIA configurado e ter o python instalado e configurados corretamente no seu sistema. Caso contrário, siga as instruções de instalação nos links a seguir:
 
-- OpenIA: [Tutoria de use](https://platform.openai.com/docs/quickstart?context=python)
+- OpenIA: [Tutoria de uso](https://platform.openai.com/docs/quickstart?context=python)
 
 
 ### Passos para Inicialização do Projeto:

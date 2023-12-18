@@ -14,14 +14,14 @@ Certifique-se de ter um ambiente OpenIA configurado e ter o python instalado e c
 
 ### Passos para Inicialização do Projeto:
 
-. Instales todas as depêndecias usadas
-``` bash
-    pip install -r requiments.txt
-```
-
 . Entre em src:
 ``` bash
     cd src
+```
+
+. Instales todas as depêndecias usadas
+``` bash
+    pip install -r requiments.txt
 ```
 
 . Execulte:

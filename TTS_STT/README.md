@@ -29,7 +29,4 @@ Certifique-se de ter um ambiente OpenIA configurado e ter o python instalado e c
     python main.py
 ```
 
-O programa será iniciado com um temporizador, e quando este atingir zero, você terá 5 segundos para gravar seu áudio. Após o término do processamento da sua fala, aparecerá um campo de entrada destinado ao idioma para traduzir seu áudio.
-
-
-[Video da demostração](https://clipchamp.com/watch/8hBKB2lLtcN)
+O programa será iniciado com um temporizador, e quando este atingir zero, você terá 5 segundos para gravar seu áudio. Após o término do processamento da sua fala, aparecerá um campo de entrada destinado ao idioma para traduzir seu áudio. Como demonstra o [Video da Demostração.](https://clipchamp.com/watch/8hBKB2lLtcN)

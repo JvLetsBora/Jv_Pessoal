@@ -11,7 +11,7 @@ from langchain.schema import BaseOutputParser
 
 dotenv_file = dotenv.find_dotenv()
 dotenv.load_dotenv(dotenv_file)
-llm = ChatOpenAI(openai_api_key=os.environ['OPENAI_API_KEY'])
+llm = ChatOpenAI(openai_api_key='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')
 chat_model = ChatOpenAI()
 
 class CommaSeparatedListOutputParser(BaseOutputParser[List[str]]):
